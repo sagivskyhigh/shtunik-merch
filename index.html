@@ -287,7 +287,7 @@ const { useState, useCallback } = React;
 /* ══════════════════════════════════════════════════════
    CONFIG
 ══════════════════════════════════════════════════════ */
-const WHATSAPP_NUMBER = '972504211217';
+const WHATSAPP_NUMBER = '972528197345';
 const EVENT_NAME      = 'שיטים';
 const SIZES           = ['S', 'M', 'L', 'XL', 'XXL'];
 
@@ -472,7 +472,7 @@ function App() {
     const lines = cart
       .map((it) => `דיזיין ${it.design.label} (צבע ${it.design.color}) · ${it.type} · מידה ${it.size}`)
       .join('\n');
-    return `היי אורפז! אלה העיצובים שבחרתי לאירוע ב${EVENT_NAME} 👽\n\n${lines}\n\nאשמח שתעשי לי חישוב ותשלחי לי לאן להעביר ביט או פייבוקס! ✌️`;
+    return `אהלן שגיב! רכשתי דרך סלקטור ואלה העיצובים שאני משריין לאירוע בשיטים 👽:\n\n${lines}\n\nמחכה לאסוף את זה עם הברקוד שלי! נתראה ברחבה ✌️`;
   }, [cart]);
 
   const sendWhatsapp = () =>
@@ -670,14 +670,30 @@ function App() {
                 </div>
               )}
 
+              {/* 4-step checkout flow */}
+              <div className="mb-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4 space-y-3">
+                <div className="text-xs font-black tracking-widest text-neonCyan mb-1">איך זה עובד</div>
+                {[
+                  { n: '1', icon: '🛒', text: 'בחרתם פריטים? מעולה — המחיר הכולל מופיע למעלה.' },
+                  { n: '2', icon: '💳', text: 'שלמו דרך אתר Selector (שם שקונים כרטיסים לאירוע) לפי הכמות שבחרתם.' },
+                  { n: '3', icon: '📲', text: 'שלחו את הסיכום לשגיב בוואטסאפ — כדי לשריין את הדיזיין והמידה הספציפיים שלכם.' },
+                  { n: '4', icon: '🎪', text: 'באירוע — מציגים את הברקוד של Selector ומקבלים את הסחורה ישר ברחבה!' },
+                ].map(({ n, icon, text }) => (
+                  <div key={n} className="flex items-start gap-3">
+                    <div className="shrink-0 w-6 h-6 rounded-full bg-neonPurple/30 border border-neonPurple/50 flex items-center justify-center text-xs font-black text-neonPurple">{n}</div>
+                    <p className="text-sm text-white/75 leading-snug"><span className="me-1">{icon}</span>{text}</p>
+                  </div>
+                ))}
+              </div>
+
               {/* WhatsApp CTA */}
               <button onClick={sendWhatsapp}
                 className="w-full rounded-full px-6 py-5 text-lg font-black transition min-h-[60px] bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white shadow-glow-green hover:scale-[1.02] active:scale-95">
-                🚀 שלח הזמנה לאורפז בוואטסאפ
+                נשאר לשריין את הדגמים שבחרתם כאן 🚀
               </button>
 
               <p className="text-center text-xs text-white/40 mt-3 leading-relaxed">
-                תיפתח שיחה מוכנה עם כל הפרטים. אורפז תחשב ותשלח לאן להעביר ביט / פייבוקס. 💸
+                תיפתח שיחה מוכנה עם כל הפרטים — שגיב ישריין לכם את הדיזיין והמידה. 👽
               </p>
             </>
           )}
