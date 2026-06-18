@@ -230,7 +230,7 @@
 const { useState, useCallback, useEffect } = React;
 
 /* ── CONFIG ── */
-const WEBHOOK_URL  = 'YOUR_MAKE_WEBHOOK_URL';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYaYtQfKMaxJ04IeCN_UvqDRgcv3VOxCoQ8b5njd-pIWeO2iXFPht5RxuBuLGiDVDzmQ/exec';
 const SELECTOR_URL = 'https://selector.org.il/e/jPbB-gIr6Oj';
 const EVENT_NAME   = 'שיטים';
 const SIZES        = ['S', 'M', 'L', 'XL', 'XXL'];
@@ -408,15 +408,13 @@ function App() {
     if (!name.trim() || totalCount === 0 || loading) return;
     setLoading(true);
     var payload = {
-      name:      name.trim(),
-      items:     cart.map((it) => 'דיזיין ' + it.design.label + ' (' + it.design.color + ') · ' + it.type + ' · ' + it.size).join(', '),
-      total:     total,
-      count:     totalCount,
-      event:     EVENT_NAME,
-      timestamp: new Date().toISOString(),
+      name:       name.trim(),
+      details:    cart.map((it) => 'דיזיין ' + it.design.label + ' (' + it.design.color + ') · ' + it.type + ' · ' + it.size).join(', '),
+      quantity:   totalCount,
+      totalPrice: total,
     };
     var redirect = function() { window.location.href = SELECTOR_URL; };
-    fetch(WEBHOOK_URL, {
+    fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
