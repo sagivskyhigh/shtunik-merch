@@ -146,7 +146,7 @@
     /* ── Accessibility widget ── */
     #a11y-btn {
       position: fixed;
-      bottom: calc(1rem + env(safe-area-inset-bottom));
+      top: 50%;
       left: 1rem;
       z-index: 9999;
       width: 52px; height: 52px;
@@ -156,15 +156,17 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 22px;
       box-shadow: 0 4px 20px rgba(157,78,255,0.6);
+      transform: translateY(-50%);
       transition: transform .2s;
     }
-    #a11y-btn:hover  { transform: scale(1.08); }
-    #a11y-btn:active { transform: scale(0.95); }
+    #a11y-btn:hover  { transform: translateY(-50%) scale(1.08); }
+    #a11y-btn:active { transform: translateY(-50%) scale(0.95); }
 
     #a11y-panel {
       position: fixed;
-      bottom: calc(4.5rem + env(safe-area-inset-bottom));
-      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(1rem + 60px);
       z-index: 9999;
       background: #1a0033;
       border: 1px solid rgba(157,78,255,.5);
