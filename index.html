@@ -617,11 +617,11 @@ function App() {
               {/* CTA */}
               <button onClick={submitOrder} disabled={!name.trim() || loading}
                 className={'w-full rounded-full px-6 py-5 text-lg font-black transition min-h-[60px] ' + (!name.trim() || loading ? 'bg-white/[0.08] text-white/35 cursor-not-allowed' : 'bg-gradient-to-r from-ember to-neonPink text-white shadow-glow-ember hover:scale-[1.02] active:scale-95')}>
-                {loading ? '⏳ מעביר לתשלום...' : 'מעבר לתשלום מאובטח בסלקטור 🔒'}
+                {loading ? '⏳ מעביר לתשלום...' : !name.trim() ? '✍️ מלאו שם מלא כדי לעבור לתשלום' : 'מעבר לתשלום מאובטח בסלקטור 🔒'}
               </button>
 
               <p className="text-center text-xs text-white/40 mt-3 leading-relaxed">
-                התשלום מתבצע דרך מערכת סלקטור המאובטחת. הפרטים שלכם נשמרים אצלנו לשריון הדגמים. 👽
+                אנחנו שומרים אצלנו רק את השם המלא, הדגמים והמידות שהזמנתם — כדי לשריין אותם עבורכם באירוע. 👽
               </p>
             </div>
           )}
