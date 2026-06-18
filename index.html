@@ -49,9 +49,10 @@
     };
   </script>
 
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <!-- Pinned version + classic JSX runtime forced below; never use floating @babel/standalone (its React-preset default flipped to the automatic runtime, which emits `import react/jsx-runtime` and breaks a no-bundler page). -->
+  <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
 
   <style>
     /* ── Base ── */
@@ -223,7 +224,9 @@
 </script>
 
 <!-- REACT APP -->
-<script type="text/babel" data-presets="env,react">
+<!-- type="text/jsx-source" is NOT auto-run by Babel; we transform it manually below
+     with runtime:"classic" so JSX compiles to React.createElement (no ES-module import). -->
+<script type="text/jsx-source" id="app-source">
 const { useState, useCallback, useEffect } = React;
 
 /* ── CONFIG ── */
@@ -655,6 +658,34 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+<!-- Manual Babel transform: classic JSX runtime, then execute -->
+<script>
+(function () {
+  function boot() {
+    try {
+      var src = document.getElementById('app-source').textContent;
+      var out = Babel.transform(src, {
+        presets: ['env', ['react', { runtime: 'classic' }]]
+      }).code;
+      var s = document.createElement('script');
+      s.textContent = out;
+      document.body.appendChild(s);
+    } catch (e) {
+      document.getElementById('root').innerHTML =
+        '<div style="padding:40px;text-align:center;color:#fff;font-family:Heebo,sans-serif">' +
+        '<div style="font-size:40px">😵‍💫</div><p>שגיאה בטעינת האתר. רעננו את הדף.</p>' +
+        '<pre style="color:#FF6B35;font-size:11px;white-space:pre-wrap">' + (e && e.message) + '</pre></div>';
+      console.error('App boot failed:', e);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
 </script>
 </body>
 </html>
