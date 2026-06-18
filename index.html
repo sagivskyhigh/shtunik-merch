@@ -479,7 +479,7 @@ function App() {
   const addToCart      = useCallback((item) => setCart((p) => [...p, item]), []);
   const removeFromCart = useCallback((uid)  => setCart((p) => p.filter((x) => x.uid !== uid)), []);
 
-  const submitOrder = async () => {
+  const submitOrder = () => {
     if (!name.trim() || totalCount === 0 || loading) return;
     setLoading(true);
     const payload = {
@@ -490,15 +490,13 @@ function App() {
       event: EVENT_NAME,
       timestamp: new Date().toISOString(),
     };
-    try {
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-    } catch (_) {}
-    window.location.href = SELECTOR_LINKS[totalCount] || SELECTOR_LINKS.default;
+    const redirect = () => { window.location.href = SELECTOR_LINKS[totalCount] || SELECTOR_LINKS.default; };
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).then(redirect).catch(redirect);
   };
 
   const goto = (id) =>
