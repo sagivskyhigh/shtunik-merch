@@ -287,9 +287,16 @@ const { useState, useCallback } = React;
 /* ══════════════════════════════════════════════════════
    CONFIG
 ══════════════════════════════════════════════════════ */
-const WHATSAPP_NUMBER = '972528197345';
-const EVENT_NAME      = 'שיטים';
-const SIZES           = ['S', 'M', 'L', 'XL', 'XXL'];
+const WEBHOOK_URL = 'YOUR_MAKE_WEBHOOK_URL';
+const EVENT_NAME  = 'שיטים';
+const SIZES       = ['S', 'M', 'L', 'XL', 'XXL'];
+
+const SELECTOR_LINKS = {
+  1:       'URL_1_ITEM',
+  2:       'URL_2_ITEMS',
+  3:       'URL_3_ITEMS',
+  default: 'URL_GENERAL',
+};
 
 const priceFor = (n) => {
   if (n <= 0) return 0;
@@ -459,24 +466,38 @@ function Lightbox({ src, alt, onClose }) {
    APP
 ══════════════════════════════════════════════════════ */
 function App() {
-  const [cart, setCart]     = useState([]);
+  const [cart, setCart]         = useState([]);
   const [lightbox, setLightbox] = useState(null);
+  const [name, setName]         = useState('');
+  const [loading, setLoading]   = useState(false);
 
   const totalCount = cart.length;
   const total      = priceFor(totalCount);
 
-  const addToCart    = useCallback((item) => setCart((p) => [...p, item]), []);
-  const removeFromCart = useCallback((uid) => setCart((p) => p.filter((x) => x.uid !== uid)), []);
+  const addToCart      = useCallback((item) => setCart((p) => [...p, item]), []);
+  const removeFromCart = useCallback((uid)  => setCart((p) => p.filter((x) => x.uid !== uid)), []);
 
-  const buildWaText = useCallback(() => {
-    const lines = cart
-      .map((it) => `דיזיין ${it.design.label} (צבע ${it.design.color}) · ${it.type} · מידה ${it.size}`)
-      .join('\n');
-    return `אהלן שגיב! רכשתי דרך סלקטור ואלה העיצובים שאני משריין לאירוע בשיטים 👽:\n\n${lines}\n\nמחכה לאסוף את זה עם הברקוד שלי! נתראה ברחבה ✌️`;
-  }, [cart]);
-
-  const sendWhatsapp = () =>
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildWaText())}`, '_blank', 'noopener,noreferrer');
+  const submitOrder = async () => {
+    if (!name.trim() || totalCount === 0 || loading) return;
+    setLoading(true);
+    const payload = {
+      name: name.trim(),
+      items: cart.map((it) => `דיזיין ${it.design.label} (${it.design.color}) · ${it.type} · ${it.size}`).join(', '),
+      total,
+      count: totalCount,
+      event: EVENT_NAME,
+      timestamp: new Date().toISOString(),
+    };
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+    } catch (_) {}
+    window.location.href = SELECTOR_LINKS[totalCount] || SELECTOR_LINKS.default;
+  };
 
   const goto = (id) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -670,30 +691,38 @@ function App() {
                 </div>
               )}
 
-              {/* 4-step checkout flow */}
-              <div className="mb-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4 space-y-3">
-                <div className="text-xs font-black tracking-widest text-neonCyan mb-1">איך זה עובד</div>
-                {[
-                  { n: '1', icon: '🛒', text: 'בחרתם פריטים? מעולה — המחיר הכולל מופיע למעלה.' },
-                  { n: '2', icon: '💳', text: 'שלמו דרך אתר Selector (שם שקונים כרטיסים לאירוע) לפי הכמות שבחרתם.' },
-                  { n: '3', icon: '📲', text: 'שלחו את הסיכום לשגיב בוואטסאפ — כדי לשריין את הדיזיין והמידה הספציפיים שלכם.' },
-                  { n: '4', icon: '🎪', text: 'באירוע — מציגים את הברקוד של Selector ומקבלים את הסחורה ישר ברחבה!' },
-                ].map(({ n, icon, text }) => (
-                  <div key={n} className="flex items-start gap-3">
-                    <div className="shrink-0 w-6 h-6 rounded-full bg-neonPurple/30 border border-neonPurple/50 flex items-center justify-center text-xs font-black text-neonPurple">{n}</div>
-                    <p className="text-sm text-white/75 leading-snug"><span className="me-1">{icon}</span>{text}</p>
-                  </div>
-                ))}
+              {/* Reassurance text */}
+              <div className="mb-5 p-4 rounded-2xl border border-neonCyan/25 bg-neonCyan/[0.06] text-sm text-white/80 leading-relaxed">
+                🔒 מלאו שם, עברו לתשלום מאובטח בסלקטור, ואנחנו נשריין לכם את המידות והדגמים! ההזמנה תחכה לכם בעמדה באירוע עם סריקת הברקוד של סלקטור.
               </div>
 
-              {/* WhatsApp CTA */}
-              <button onClick={sendWhatsapp}
-                className="w-full rounded-full px-6 py-5 text-lg font-black transition min-h-[60px] bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white shadow-glow-green hover:scale-[1.02] active:scale-95">
-                נשאר לשריין את הדגמים שבחרתם כאן 🚀
+              {/* Name input */}
+              <div className="mb-4">
+                <label className="block text-xs font-black text-white/50 mb-2 tracking-wide">שם מלא</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="למשל: שגיב כהן"
+                  className="w-full rounded-2xl px-4 py-3.5 bg-white/[0.06] border border-white/15 text-white placeholder-white/30 focus:border-neonCyan/60 focus:outline-none transition min-h-[52px]"
+                />
+              </div>
+
+              {/* Selector CTA */}
+              <button
+                onClick={submitOrder}
+                disabled={!name.trim() || totalCount === 0 || loading}
+                className={`w-full rounded-full px-6 py-5 text-lg font-black transition min-h-[60px] ${
+                  !name.trim() || loading
+                    ? 'bg-white/[0.08] text-white/35 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-neonPurple to-neonPink text-white shadow-glow-pink hover:scale-[1.02] active:scale-95'
+                }`}
+              >
+                {loading ? '⏳ מעביר לתשלום...' : 'מעבר לתשלום מאובטח בסלקטור 🔒'}
               </button>
 
               <p className="text-center text-xs text-white/40 mt-3 leading-relaxed">
-                תיפתח שיחה מוכנה עם כל הפרטים — שגיב ישריין לכם את הדיזיין והמידה. 👽
+                התשלום מתבצע דרך מערכת סלקטור המאובטחת. הפרטים שלכם נשמרים אצלנו לשריון הדגמים. 👽
               </p>
             </>
           )}
