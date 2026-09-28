@@ -525,22 +525,18 @@ const { useState, useCallback, useEffect, useRef } = React;
    CONFIG · everything to fill in before going live lives here
    ══════════════════════════════════════════════════════════════════ */
 
-// Google Apps Script Web App URL — the same script as the previous Shtutnik event.
-// The checkout waits for {ok:true} JSON from this script before it continues,
-// so the script's doPost must return that (see apps-script/Code.gs).
-// Deploy with "Who has access: Anyone", otherwise the request fails on CORS.
+// Google Apps Script Web App URL — the same script and sheet as the previous Shtutnik
+// event (rows land in its default active sheet). Sent fire-and-forget (no-cors):
+// the script's reply is never read, so it does not need to return any special JSON.
 // Empty = test mode: nothing is saved and a confirmation screen is shown instead.
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwYaYtQfKMaxJ04IeCN_UvqDRgcv3VOxCoQ8b5njd-pIWeO2iXFPht5RxuBuLGiDVDzmQ/exec';
-
-// Tab inside that Google Sheet where this event's orders go. Sent as `sheetName`.
-const SHEET_TAB = 'שנות ה80';
 
 // The SELECTOR (סלקטור) checkout link. One link for every order.
 // Empty = the order is saved and a confirmation screen is shown instead of redirecting.
 const SELECTOR_CHECKOUT_LINK = 'https://selector.org.il/e/yx-vLKCn63N';
 
-/* How long to wait for the sheet before giving up (ms). The first call after a
-   fresh Apps Script deploy is "cold" and can take ~18s, so 30s, not 15s. */
+/* Max wait for the sheet request before continuing to payment anyway (ms). The
+   first call after an Apps Script deploy is "cold" (~18s), so allow 30s for it to land. */
 const REQUEST_TIMEOUT_MS = 30000;
 
 const EVENT_NAME = 'שטותניק בשנות ה-80';
@@ -1316,20 +1312,21 @@ function App() {
   }), []);
   const removeFromCart = useCallback((uid) => { setError(''); setCart((p) => p.filter((x) => x.uid !== uid)); }, []);
 
-  /* Strict checkout flow:
+  /* Checkout flow (fire-and-forget save, then pay):
        1. loading state
-       2. POST to the Google Sheet
-       3. wait for the answer and verify ok:true
-       4. only then redirect to the single Selector link
-     Any failure => error message, no redirect. */
+       2. POST the order to the Google Sheet (no-cors: the reply is opaque and not read)
+       3. as soon as the request has gone out, redirect to the single Selector link
+     Only a real network failure (request never sent) shows an error and blocks
+     the redirect. The old sheet script does not return JSON, and in no-cors mode
+     its reply cannot be read anyway, so success is not verified server-side —
+     reconcile the sheet against Selector's payment list. */
   const submitOrder = () => {
     if (!formReady || totalCount === 0 || loading) return;
 
     var link = paymentLink();
 
-    /* Created once and kept in a ref, so "try again" after a failure sends the
-       same id. The script upserts by it, so a retry updates the same row instead
-       of creating a duplicate order (a timed-out request may still have landed). */
+    /* Created once and kept in a ref, so a retry sends the same id — duplicate
+       rows (if any) are easy to spot in the sheet by this column. */
     if (!orderIdRef.current) {
       orderIdRef.current = 'SH-' + Date.now().toString(36).toUpperCase();
     }
@@ -1338,7 +1335,6 @@ function App() {
     setLoading(true);
 
     var payload = {
-      sheetName:    SHEET_TAB,          // the script writes the row into this tab
       orderId:      orderIdRef.current,
       name:         name.trim(),
       phone:        phone.trim(),
@@ -1367,41 +1363,38 @@ function App() {
       return;
     }
 
-    // mode:'cors' so we can READ the answer and know the save really happened.
-    // text/plain avoids a preflight (OPTIONS) that Apps Script cannot answer;
-    // the body is still JSON and is read from e.postData.contents.
+    var proceed = function () {
+      if (link) { window.location.href = link; return; }
+      setLoading(false);
+      setDone(payload);
+    };
+
+    // no-cors = the same way the previous Shtutnik site posted to this script.
+    // The request is delivered, the reply is opaque, and fetch only rejects if the
+    // request could not be sent at all. text/plain keeps it a "simple" request;
+    // the body is still JSON and the script reads it from e.postData.contents.
     var ctrl  = new AbortController();
     var timer = setTimeout(function () { ctrl.abort(); }, REQUEST_TIMEOUT_MS);
 
     fetch(SHEET_URL, {
-      method:   'POST',
-      mode:     'cors',
-      redirect: 'follow',
-      headers:  { 'Content-Type': 'text/plain;charset=utf-8' },
-      body:     JSON.stringify(payload),
-      signal:   ctrl.signal,
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body:    JSON.stringify(payload),
+      signal:  ctrl.signal,
     })
-      .then(function (res) {
+      .then(function () {
         clearTimeout(timer);
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      })
-      .then(function (data) {
-        if (!data || data.ok !== true) throw new Error((data && data.error) || 'invalid response');
-        // Only here is the order definitely saved — go pay.
-        if (link) { window.location.href = link; return; }
-        setLoading(false);
-        setDone(payload);
+        proceed();
       })
       .catch(function (err) {
         clearTimeout(timer);
+        // Timeout = the request went out and the script is just slow (cold start).
+        // Don't hold the buyer back from paying — continue to Selector.
+        if (err && err.name === 'AbortError') { proceed(); return; }
+        // Anything else = the request never left the browser (offline, blocked).
         setLoading(false);
-        var aborted = err && err.name === 'AbortError';
-        /* After a timeout we do NOT know whether the order landed, so never claim
-           it was not saved. Retrying is safe: same order id, same row. */
-        setError(aborted
-          ? 'לקח לשרת יותר מדי זמן לענות. לא חויבתם. אפשר ללחוץ "נסו שוב" בבטחה — לא תיווצר הזמנה כפולה.'
-          : 'לא הצלחנו לשמור את ההזמנה. לא חויבתם ולא הועברתם לתשלום — נסו שוב בעוד רגע.');
+        setError('לא הצלחנו לשלוח את ההזמנה — נראה שיש בעיה בחיבור לאינטרנט. לא חויבתם ולא הועברתם לתשלום. בדקו את החיבור ונסו שוב.');
         console.error('Order submit failed:', err);
       });
   };
