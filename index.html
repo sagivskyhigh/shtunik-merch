@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>שטותניק בשנות ה-80 · Pre-Order</title>
-  <meta name="description" content="מהדורת שנות ה-80 של שטותניק: 3 עיצובים חדשים וקפוצ׳ונים איכותיים, מיוצרים במיוחד למי שמזמין. הזמנה מראש, מסירה ביד באירוע." />
+  <title>שטותניק · מהדורת שנות ה-80</title>
+  <meta name="description" content="3 עיצובים בלעדיים בסגנון שנות ה-80 לחולצות ולגופיות, וקפוצ׳ונים איכותיים לחורף. מיוצר בישראל · הזמנה מראש · מסירה ביד באירוע." />
   <meta name="theme-color" content="#0B0320" />
 
-  <meta property="og:title"       content="שטותניק בשנות ה-80 · Merch Drop" />
-  <meta property="og:description" content="מהדורת שנות ה-80: 3 עיצובים חדשים + קפוצ׳ונים איכותיים לחורף. הזמנה מראש בלבד, מסירה באירוע." />
+  <!-- Link preview (WhatsApp / Facebook / Telegram). og:image and og:url must be ABSOLUTE
+       URLs, otherwise most scrapers drop the image. -->
+  <meta property="og:site_name"   content="Shtutnik" />
+  <meta property="og:locale"      content="he_IL" />
   <meta property="og:type"        content="website" />
-  <meta property="og:image"       content="img/shirt-black.jpg" />
+  <meta property="og:url"         content="https://shtunik-merch.vercel.app/" />
+  <meta property="og:title"       content="שטותניק · מהדורת שנות ה-80" />
+  <meta property="og:description" content="3 עיצובים בלעדיים בסגנון שנות ה-80 לחולצות ולגופיות, וקפוצ׳ונים איכותיים לחורף. מיוצר בישראל · הזמנה מראש · מסירה ביד באירוע." />
+  <meta property="og:image"       content="https://shtunik-merch.vercel.app/img/shirt-black.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt"   content="שטותניק · מהדורת שנות ה-80 · חולצה שחורה" />
+  <meta name="twitter:card"       content="summary_large_image" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B4%3C/text%3E%3C/svg%3E" />
 
@@ -608,14 +617,14 @@ const COLORS = {
 /* ── The 3 designs · one fixed color each ──
    slug = the design's color key, and builds the file name next to index.html:
    shirt-<slug>.jpg / tank-<slug>.jpg  (e.g. shirt-black.jpg, tank-beige.jpg).
-   TODO · names and taglines are placeholders until the final artwork is ready. */
+   Taglines describe the COLOR only — the artwork is revealed on the mockups. */
 const DESIGNS = [
   { id: 1, label: 'A', slug: 'black', name: 'עיצוב A', color: COLORS.black.color, hex: COLORS.black.hex,
-    tagline: 'שמש מפוספסת ורשת ניאון בוורוד וטורקיז, שקופצות על רקע שחור עמוק.' },
+    tagline: 'הקלאסיקה שהולכת עם הכל — ומושלמת לרקוד בה עד הבוקר.' },
   { id: 2, label: 'B', slug: 'white', name: 'עיצוב B', color: COLORS.white.color, hex: COLORS.white.hex,
-    tagline: 'דקלים, קסטה ואותיות כרום בסגנון רטרו, על בד לבן ונקי.' },
+    tagline: 'נקי ורענן, ותופס כל אור ניאון וכל סטרוב על הרחבה.' },
   { id: 3, label: 'C', slug: 'beige', name: 'עיצוב C', color: COLORS.beige.color, hex: COLORS.beige.hex,
-    tagline: 'גרפיקה בסטייל VHS בגוונים של שקיעה, על בז׳ חמים.' },
+    tagline: 'ארצי ורגוע — וייב צ׳יל שמאזן בדיוק את הגרפיקה המטורפת של שנות ה-80.' },
 ];
 
 /* ── Hoodie colors ── file name: hoodie-<slug>.jpg */
