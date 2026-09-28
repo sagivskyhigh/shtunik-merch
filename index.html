@@ -3,46 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>שטותניק · Drop בשיטים · Pre-Order</title>
-  <meta name="description" content="סורקים. שומעים. זוכרים. חולצה ספוטיפיי בלעדית לאירוע בשיטים." />
-  <meta name="theme-color" content="#120008" />
+  <title>שטותניק בשנות ה-80 · Pre-Order</title>
+  <meta name="description" content="מהדורת שנות ה-80 של שטותניק: 3 עיצובים חדשים וקפוצ׳ונים איכותיים, מיוצרים במיוחד למי שמזמין. הזמנה מראש, מסירה ביד באירוע." />
+  <meta name="theme-color" content="#0B0320" />
 
-  <meta property="og:title"       content="שטותניק · Drop בשיטים" />
-  <meta property="og:description" content="חולצה עם קוד ספוטיפיי. בלעדי לאירוע בשיטים. הזמינו עכשיו לפני שנגמר." />
+  <meta property="og:title"       content="שטותניק בשנות ה-80 · Merch Drop" />
+  <meta property="og:description" content="מהדורת שנות ה-80: 3 עיצובים חדשים + קפוצ׳ונים איכותיים לחורף. הזמנה מראש בלבד, מסירה באירוע." />
   <meta property="og:type"        content="website" />
-  <meta property="og:image"       content="shirt1.jpg" />
+  <meta property="og:image"       content="img/shirt-black.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B4%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Heebo:wght@300;400;500;700;800;900&family=Monoton&family=Rubik:wght@700;900&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Heebo', 'system-ui', 'sans-serif'] },
+          fontFamily: {
+            sans:    ['Heebo', 'system-ui', 'sans-serif'],
+            display: ['Rubik', 'Heebo', 'sans-serif'],
+            retro:   ['Audiowide', 'Heebo', 'sans-serif'],
+            tube:    ['Monoton', 'Audiowide', 'sans-serif'],
+          },
           colors: {
-            ink:        '#120008',
-            ember:      '#FF6B35',
-            neonPink:   '#FF2EC4',
-            neonPurple: '#9D4EFF',
-            neonYellow: '#FFD93D',
-            sand:       '#FFAA44',
+            ink:        '#07020F',  /* page black, violet tinted */
+            night:      '#0B0320',  /* raised surface            */
+            dusk:       '#1A0840',  /* elevated panel            */
+            neonPink:   '#FF2E88',  /* Vice pink · from the logo */
+            neonCyan:   '#22D3FF',  /* Miami cyan                */
+            neonViolet: '#A43BFF',  /* synth violet              */
+            sunset:     '#FFAA1F',  /* sun amber                 */
+            lemon:      '#FFE45C',  /* sun core                  */
+            chalk:      '#F4EEFF',  /* text                      */
           },
           boxShadow: {
-            'glow-ember':  '0 0 28px rgba(255,107,53,0.6),  0 0 70px rgba(255,107,53,0.25)',
-            'glow-pink':   '0 0 28px rgba(255,46,196,0.55), 0 0 70px rgba(255,46,196,0.2)',
-            'glow-purple': '0 0 28px rgba(157,78,255,0.55), 0 0 70px rgba(157,78,255,0.2)',
-            'glow-green':  '0 0 28px rgba(37,211,102,0.55), 0 0 70px rgba(37,211,102,0.2)',
+            'glow-pink':   '0 0 22px rgba(255,46,136,.55), 0 0 64px rgba(255,46,136,.22)',
+            'glow-cyan':   '0 0 22px rgba(34,211,255,.50), 0 0 64px rgba(34,211,255,.18)',
+            'glow-violet': '0 0 22px rgba(164,59,255,.55), 0 0 64px rgba(164,59,255,.20)',
+            'glow-sun':    '0 0 22px rgba(255,170,31,.50), 0 0 64px rgba(255,46,136,.20)',
           },
-          animation: {
-            float:  'float 7s ease-in-out infinite',
-            fadein: 'fadein .3s ease-out',
-          },
+          animation: { fadein: 'fadein .35s ease-out' },
           keyframes: {
-            float:  { '0%,100%': { transform: 'translateY(0)' },          '50%': { transform: 'translateY(-12px)' } },
-            fadein: { from: { opacity: 0, transform: 'translateY(8px)' }, to:   { opacity: 1, transform: 'none'   } },
+            fadein: { from: { opacity: 0, transform: 'translateY(10px)' }, to: { opacity: 1, transform: 'none' } },
           },
         },
       },
@@ -55,143 +61,420 @@
   <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
 
   <style>
+    :root {
+      --ink: #07020F; --night: #0B0320; --dusk: #1A0840;
+      --pink: #FF2E88; --cyan: #22D3FF; --violet: #A43BFF;
+      --sunset: #FFAA1F; --lemon: #FFE45C; --chalk: #F4EEFF;
+    }
+
     /* ── Base ── */
-    html { background: #120008; scroll-padding-top: 64px; }
+    html { background: var(--ink); scroll-padding-top: 72px; }
     body {
-      font-family: 'Heebo', sans-serif; color: #fdf4ee;
+      font-family: 'Heebo', sans-serif; color: var(--chalk);
       -webkit-font-smoothing: antialiased; overscroll-behavior-y: none;
       -webkit-tap-highlight-color: transparent;
     }
     input, select, textarea { font-size: 16px !important; }
     a, button, [role="button"] { touch-action: manipulation; }
-    :focus-visible { outline: 2px solid #FF6B35; outline-offset: 3px; border-radius: 6px; }
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+    ::selection { background: rgba(255,46,136,.45); color: #fff; }
 
-    /* ── Desert sunset hero ── */
-    .desert {
+    /* ══ AMBIENT · fixed night sky behind everything ══
+       transform/opacity only, pointer-events:none, its own compositor layer. */
+    #ambient {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
       background:
-        radial-gradient(ellipse 1100px 550px at 80%  -5%,  rgba(255,107,53,.35), transparent 60%),
-        radial-gradient(ellipse  900px 500px at 5%   20%,  rgba(255,46,196,.20), transparent 60%),
-        radial-gradient(ellipse  950px 700px at 50% 110%,  rgba(157,78,255,.30), transparent 60%),
-        radial-gradient(ellipse  700px 400px at 95%  60%,  rgba(255,170,68,.22), transparent 55%),
-        #120008;
+        radial-gradient(ellipse 900px 600px at 85% 0%,   rgba(164,59,255,.22), transparent 60%),
+        radial-gradient(ellipse 800px 520px at 5% 40%,   rgba(255,46,136,.12), transparent 60%),
+        radial-gradient(ellipse 1000px 700px at 50% 110%, rgba(34,211,255,.10), transparent 60%),
+        linear-gradient(180deg, #0B0320 0%, #07020F 55%, #0A0224 100%);
+      -webkit-transform: translateZ(0); transform: translateZ(0);
     }
+    #root { position: relative; z-index: 1; }
 
-    /* ── Tribal diamond overlay ── */
-    .tribal::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FF6B35' fill-opacity='0.045'%3E%3Cpolygon points='40,4 76,40 40,76 4,40'/%3E%3Cpolygon points='40,18 62,40 40,62 18,40'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 80px 80px;
-    }
-
-    /* ── Ember / dust particles ── */
-    .embers::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
+    .stars {
+      position: absolute; inset: -10%;
       background-image:
-        radial-gradient(1.5px 1.5px at 18% 28%, #FF6B35, transparent 50%),
-        radial-gradient(1px   1px   at 72% 78%, #FFD93D, transparent 50%),
-        radial-gradient(2px   2px   at 42% 58%, #FF2EC4, transparent 50%),
-        radial-gradient(1px   1px   at 88% 18%, #FF8C42, transparent 50%),
-        radial-gradient(1.5px 1.5px at 14% 72%, #FFD93D, transparent 50%),
-        radial-gradient(2px   2px   at 56% 14%, #FF6B35, transparent 50%),
-        radial-gradient(1px   1px   at 84% 54%, #FF2EC4, transparent 50%),
-        radial-gradient(1px   1px   at 31% 42%, #FFAA44, transparent 50%),
-        radial-gradient(1.5px 1.5px at 65% 33%, #FF6B35, transparent 50%),
-        radial-gradient(1px   1px   at 22% 88%, #FFD93D, transparent 50%),
-        radial-gradient(2px   2px   at 78%  6%, #FF2EC4, transparent 50%);
-      opacity: .65;
+        radial-gradient(1.4px 1.4px at 12% 18%, #fff, transparent 60%),
+        radial-gradient(1px 1px   at 32% 64%, #BDF3FF, transparent 60%),
+        radial-gradient(1.6px 1.6px at 58% 22%, #FFD0E6, transparent 60%),
+        radial-gradient(1px 1px   at 76% 72%, #fff, transparent 60%),
+        radial-gradient(1.2px 1.2px at 88% 38%, #BDF3FF, transparent 60%),
+        radial-gradient(1px 1px   at 44% 88%, #FFD0E6, transparent 60%),
+        radial-gradient(1.3px 1.3px at 6% 82%, #fff, transparent 60%);
+      background-size: 420px 420px;
+      opacity: .75;
+      /* static on purpose: every glass panel blurs what is behind it, so an
+         animated layer here would force a re-blur of every panel each frame */
+    }
+    .stars.s2 { background-size: 640px 640px; opacity: .5; }
+
+    /* CRT scanlines · faint texture on the BACKGROUND only. It lives inside
+       #ambient (under all content), so it never draws over a product photo. */
+    .scanlines {
+      position: absolute; inset: 0; pointer-events: none;
+      /* plain alpha, no mix-blend-mode: blending a full-screen fixed layer
+         forces the whole page to re-composite on every scroll frame */
+      background: repeating-linear-gradient(to bottom, rgba(7,2,15,.11) 0 1px, transparent 1px 3px);
     }
 
-    /* ── Neon gradient text (warm desert) ── */
-    .neon-text {
-      background: linear-gradient(135deg, #FF6B35 0%, #FF2EC4 55%, #FFD93D 100%);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      filter: drop-shadow(0 0 14px rgba(255,107,53,.45));
+    /* ══ HERO SCENE · sky → sun → mountains → grid floor → palms ══
+       The horizon is derived from the sun's size so everything stays aligned
+       at every breakpoint. */
+    .scene {
+      --sun: 300px; --sunTop: 96px;
+      --horizon: calc(var(--sunTop) + var(--sun) * .74);
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+      background: linear-gradient(180deg,
+        #0B0320 0%, #1B0746 calc(var(--horizon) * .55), #4A0F63 calc(var(--horizon) * .85),
+        #8A1767 var(--horizon), #0B0320 calc(var(--horizon) + 1px), #07020F 100%);
     }
+    @media (min-width: 768px) { .scene { --sun: 470px; --sunTop: 80px; } }
+
+    .sun-glow {
+      position: absolute; left: 50%; top: calc(var(--sunTop) - var(--sun) * .25);
+      width: calc(var(--sun) * 1.7); height: calc(var(--sun) * 1.5); transform: translateX(-50%);
+      background: radial-gradient(circle at 50% 55%, rgba(255,120,80,.45), rgba(255,46,136,.20) 40%, transparent 68%);
+      filter: blur(20px);
+      animation: sun-pulse 7s ease-in-out infinite;
+    }
+    .sun {
+      position: absolute; left: 50%; top: var(--sunTop); transform: translateX(-50%);
+      width: var(--sun); height: var(--sun); border-radius: 50%;
+      background: linear-gradient(180deg, var(--lemon) 0%, var(--sunset) 32%, #FF5A6E 60%, var(--pink) 78%, var(--violet) 100%);
+      /* the classic sliced-sun stripes, thickening toward the horizon */
+      -webkit-mask-image: linear-gradient(180deg,
+        #000 0 48%, transparent 48% 50.5%, #000 50.5% 57%, transparent 57% 60.5%,
+        #000 60.5% 66%, transparent 66% 70.5%, #000 70.5% 75%, transparent 75% 80.5%,
+        #000 80.5% 84%, transparent 84% 91%, #000 91% 100%);
+              mask-image: linear-gradient(180deg,
+        #000 0 48%, transparent 48% 50.5%, #000 50.5% 57%, transparent 57% 60.5%,
+        #000 60.5% 66%, transparent 66% 70.5%, #000 70.5% 75%, transparent 75% 80.5%,
+        #000 80.5% 84%, transparent 84% 91%, #000 91% 100%);
+    }
+    @keyframes sun-pulse { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+
+    .mountains {
+      position: absolute; left: 0; right: 0; height: calc(var(--sun) * .32);
+      top: calc(var(--horizon) - var(--sun) * .32 + 1px);
+    }
+    .mountains svg { width: 100%; height: 100%; display: block; }
+
+    .floor {
+      position: absolute; left: 0; right: 0; top: var(--horizon); bottom: 0;
+      perspective: 260px; perspective-origin: 50% 0%; overflow: hidden;
+      background: linear-gradient(180deg, #1A0640 0%, #0B0320 40%, #07020F 100%);
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 92%);
+              mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 92%);
+    }
+    .floor-plane {
+      position: absolute; left: -60%; right: -60%; top: 0; height: 220%;
+      transform-origin: 50% 0%;
+      background-image:
+        linear-gradient(rgba(255,46,136,.85) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(34,211,255,.75) 2px, transparent 2px);
+      background-size: 56px 56px;
+      background-position: center top;
+      animation: grid-run 1.6s linear infinite;
+      will-change: transform;
+    }
+    /* loop distance == one grid cell, otherwise the grid jumps */
+    @keyframes grid-run {
+      from { transform: rotateX(72deg) translate3d(0, 0, 0); }
+      to   { transform: rotateX(72deg) translate3d(0, 56px, 0); }
+    }
+    .horizon-line {
+      position: absolute; left: 0; right: 0; top: var(--horizon); height: 2px;
+      background: linear-gradient(90deg, transparent, var(--pink) 20%, #FFB0D4 50%, var(--pink) 80%, transparent);
+      box-shadow: 0 0 18px 3px rgba(255,46,136,.65);
+    }
+
+    .palm {
+      position: absolute; top: calc(var(--horizon) - var(--sun) * .95);
+      height: calc(var(--sun) * 1.15); width: auto;
+      filter: drop-shadow(0 0 1px rgba(255,46,136,.9)) drop-shadow(0 0 10px rgba(255,46,136,.35));
+      transform-origin: 50% 100%;
+      animation: sway 9s ease-in-out infinite;
+    }
+    .palm.left  { left: -6%; }
+    .palm.right { right: -6%; animation-delay: -4s; }
+    .palm.right svg, .palm.left svg { height: 100%; width: auto; display: block; }
+    .palm.right svg { transform: scaleX(-1); }
+    @media (min-width: 768px) { .palm.left { left: 3%; } .palm.right { right: 3%; } }
+    @keyframes sway { 0%,100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.4deg); } }
+
+    /* ── Hero logo · floats, with a breathing neon halo ── */
+    .hero-logo { position: relative; display: inline-flex; }
+    .hero-logo::before {
+      content: ''; position: absolute; inset: -12%; border-radius: 50%;
+      background: radial-gradient(circle, rgba(34,211,255,.22), rgba(255,46,136,.18) 45%, transparent 70%);
+      filter: blur(22px); z-index: 0;
+      animation: sun-pulse 5s ease-in-out infinite;
+    }
+    .hero-logo img {
+      position: relative; z-index: 1;
+      filter: drop-shadow(0 6px 0 rgba(7,2,15,.55)) drop-shadow(0 0 18px rgba(255,46,136,.35));
+      animation: levitate 6.5s ease-in-out infinite;
+    }
+    @keyframes levitate { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-12px) rotate(0deg); } }
+
+    /* ── Type treatments ── */
+    .chrome {
+      background: linear-gradient(180deg,
+        #FFFFFF 0%, #E6F9FF 30%, #9FDFFF 47%, #3A1470 50%, #FF6FB5 54%, #FFD1E8 75%, #FFFFFF 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 2px 0 rgba(7,2,15,.9)) drop-shadow(0 0 16px rgba(255,46,136,.35));
+    }
+    .neon-grad {
+      background: linear-gradient(100deg, var(--pink) 0%, #FF6A5C 38%, var(--sunset) 62%, var(--cyan) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 0 14px rgba(255,46,136,.35));
+    }
+    .neon-pink  { color: #FF8CC0; text-shadow: 0 0 6px rgba(255,46,136,.9), 0 0 18px rgba(255,46,136,.6), 0 0 40px rgba(255,46,136,.35); }
+    .neon-cyan  { color: #B5F1FF; text-shadow: 0 0 6px rgba(34,211,255,.9), 0 0 18px rgba(34,211,255,.55), 0 0 40px rgba(34,211,255,.3); }
+    .eyebrow    { font-family: 'Audiowide', sans-serif; letter-spacing: .28em; font-size: 11px; }
+
+    /* neon tube sign that occasionally stutters, like a real sign */
+    .flicker { animation: flicker 6s linear infinite; }
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: .35; }
+    }
+
+    /* ── Neon glass panel · gradient border via padding-box/border-box ── */
+    .panel {
+      border: 1px solid transparent;
+      background:
+        linear-gradient(160deg, rgba(40,14,86,.72), rgba(14,4,36,.78)) padding-box,
+        linear-gradient(135deg, rgba(255,46,136,.55), rgba(164,59,255,.22) 45%, rgba(34,211,255,.55)) border-box;
+      -webkit-backdrop-filter: blur(12px) saturate(130%);
+              backdrop-filter: blur(12px) saturate(130%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 12px 34px rgba(0,0,0,.45);
+    }
+    .panel-hover { transition: box-shadow .3s ease, transform .3s ease; }
+    .panel-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 18px 44px rgba(0,0,0,.5),
+                  0 0 30px rgba(255,46,136,.22), 0 0 60px rgba(34,211,255,.10);
+    }
+    @media (max-width: 640px) {
+      .panel { -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); }
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .panel { background:
+        linear-gradient(160deg, rgba(40,14,86,.96), rgba(14,4,36,.97)) padding-box,
+        linear-gradient(135deg, rgba(255,46,136,.55), rgba(164,59,255,.22) 45%, rgba(34,211,255,.55)) border-box; }
+    }
+
+    /* ── Flagship card · the hoodie. Thicker hot border + halo behind. ── */
+    .panel-flagship {
+      border-width: 2px;
+      background:
+        linear-gradient(160deg, rgba(48,14,96,.80), rgba(14,4,36,.86)) padding-box,
+        linear-gradient(135deg, var(--pink), var(--violet) 45%, var(--cyan)) border-box;
+      box-shadow: 0 18px 50px rgba(0,0,0,.55), 0 0 40px rgba(255,46,136,.30), 0 0 90px rgba(34,211,255,.14);
+    }
+    .flagship-halo::before {
+      content: ''; position: absolute; inset: -20px; border-radius: 36px;
+      background: radial-gradient(ellipse at 50% 35%, rgba(255,46,136,.30), rgba(34,211,255,.12) 55%, transparent 76%);
+      filter: blur(26px); pointer-events: none; z-index: 0;
+      animation: sun-pulse 6.5s ease-in-out infinite;
+    }
+
+    /* ── Product stage · only visible while a mockup is missing / loading ── */
+    .stage {
+      position: relative; overflow: hidden;
+      background: radial-gradient(ellipse 75% 65% at 50% 40%, #4A1C80 0%, #221048 58%, #10052C 100%);
+    }
+    .stage::before {
+      content: ''; position: absolute; left: -30%; right: -30%; bottom: 0; height: 42%;
+      background-image:
+        linear-gradient(rgba(255,46,136,.45) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,211,255,.40) 1px, transparent 1px);
+      background-size: 26px 26px;
+      transform: perspective(200px) rotateX(55deg); transform-origin: 50% 100%;
+      -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 90%);
+              mask-image: linear-gradient(to top, #000 0%, transparent 90%);
+      pointer-events: none;
+    }
+    .stage > img, .stage > .img-missing { position: relative; z-index: 1; }
+
+    /* Product photos are shown exactly as supplied: no filter, blend, opacity,
+       hover zoom or overlay texture. Once a real photo is in the frame, the
+       neon stage behind it is switched off too — plain neutral backing only. */
+    .product-img { filter: none; mix-blend-mode: normal; opacity: 1; transform: none; }
+    .stage:has(> img) { background: #0B0320; }
+    .stage:has(> img)::before { display: none; }
+
+    /* placeholder shown when an image file is not in the folder yet */
+    .img-missing {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      text-align: center; padding: 14px; color: #FFD0E6;
+      border: 2px dashed rgba(255,46,136,.55); background: rgba(7,2,15,.35);
+    }
+    .img-missing code {
+      font-family: 'Audiowide', monospace; font-size: 11px; color: var(--cyan);
+      background: rgba(34,211,255,.08); border: 1px solid rgba(34,211,255,.3);
+      padding: 2px 8px; border-radius: 6px; direction: ltr; word-break: break-all;
+    }
+
+    /* ── Buttons ── */
+    .btn-sunset {
+      color: #1A0530;
+      background: linear-gradient(100deg, var(--pink) 0%, #FF6A5C 50%, var(--sunset) 100%);
+      box-shadow: 0 0 20px rgba(255,46,136,.45), 0 0 60px rgba(255,120,60,.16), inset 0 1px 0 rgba(255,255,255,.45);
+      transition: transform .15s ease, filter .2s ease, box-shadow .2s ease;
+    }
+    .btn-sunset:hover  { filter: brightness(1.08) saturate(1.1); box-shadow: 0 0 28px rgba(255,46,136,.6), 0 0 80px rgba(255,120,60,.25), inset 0 1px 0 rgba(255,255,255,.5); }
+    .btn-sunset:active { transform: scale(.97); }
+    .btn-ghost {
+      color: #B5F1FF; border: 1.5px solid rgba(34,211,255,.6); background: rgba(34,211,255,.06);
+      box-shadow: 0 0 14px rgba(34,211,255,.18), inset 0 0 14px rgba(34,211,255,.07);
+      text-shadow: 0 0 8px rgba(34,211,255,.5);
+      transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+    .btn-ghost:hover  { background: rgba(34,211,255,.13); box-shadow: 0 0 22px rgba(34,211,255,.35), inset 0 0 16px rgba(34,211,255,.12); }
+    .btn-ghost:active { transform: scale(.97); }
+    .btn-off { background: rgba(255,255,255,.05); color: rgba(244,238,255,.34); cursor: not-allowed; }
+    .btn-done { background: linear-gradient(100deg, var(--cyan), #7CF7D4); color: #07202A; transform: scale(.97); }
+
+    /* toggles (type / color / size) */
+    .opt {
+      border: 1px solid rgba(244,238,255,.14); color: rgba(244,238,255,.62);
+      transition: border-color .2s, color .2s, background .2s, box-shadow .2s, transform .15s;
+    }
+    .opt:hover  { border-color: rgba(34,211,255,.45); color: rgba(244,238,255,.9); }
+    .opt:active { transform: scale(.95); }
+    .opt.on {
+      border-color: var(--cyan); color: #CFF7FF; background: rgba(34,211,255,.14);
+      box-shadow: 0 0 16px rgba(34,211,255,.45), inset 0 0 10px rgba(34,211,255,.15);
+      text-shadow: 0 0 8px rgba(34,211,255,.6);
+    }
+
+    /* gloss sweep on primary CTAs */
+    .sheen { position: relative; overflow: hidden; }
+    .sheen::after {
+      content: ''; position: absolute; top: -20%; bottom: -20%; width: 38%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+      transform: skewX(-18deg); pointer-events: none;
+      animation: sheen-sweep 5.5s ease-in-out infinite;
+    }
+    @keyframes sheen-sweep { 0% { left: -55%; } 55%, 100% { left: 130%; } }
+
+    /* ── Marquee ticker ── */
+    .marquee { overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; animation: marquee 32s linear infinite; will-change: transform; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── Countdown LED tiles ── */
+    .led {
+      font-family: 'Audiowide', sans-serif; font-variant-numeric: tabular-nums;
+      color: #CFF7FF; text-shadow: 0 0 6px rgba(34,211,255,.95), 0 0 20px rgba(34,211,255,.55);
+    }
+
+    /* ── Section divider · a neon tube ── */
+    .tube {
+      height: 2px; border: 0; margin: 0 auto; max-width: 320px;
+      background: linear-gradient(90deg, transparent, var(--pink), var(--cyan), transparent);
+      box-shadow: 0 0 12px rgba(255,46,136,.6);
+    }
+
+    /* ── Scroll reveal · the hiding class is added by JS, so no-JS = visible ── */
+    .reveal { opacity: 0; transform: translateY(26px);
+      transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
 
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #120008; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(#FF6B35, #9D4EFF); border-radius: 9px; }
-
-    .img-missing {
-      background: #dc2626; color: #fff; font-family: monospace;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 12px; font-size: 13px; font-weight: 700;
-      word-break: break-all; border: 2px dashed #fff;
-    }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--pink), var(--violet), var(--cyan)); border-radius: 9px; }
 
     body.no-scroll { overflow: hidden; }
 
+    /* ── Mobile: fewer moving layers ── */
+    @media (max-width: 640px) {
+      .stars.s2 { display: none; }
+      .floor-plane { animation-duration: 2.2s; }
+      .scanlines { display: none; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .animate-float { animation: none !important; }
+      .sun-glow, .floor-plane, .palm, .hero-logo::before, .hero-logo img,
+      .flicker, .sheen::after, .marquee-track, .flagship-halo::before { animation: none !important; }
+      .sheen::after { display: none; }
+      .floor-plane { transform: rotateX(72deg); }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .panel-hover:hover { transform: none; }
     }
 
-    /* ── Mobile sticky bar safe area ── */
-    .mobile-cart-bar {
-      padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    /* ── Viewport height (iOS URL bar) ── */
+    .app-shell { min-height: 100vh; }
+    @supports (min-height: 100dvh) { .app-shell { min-height: 100dvh; } }
+
+    /* ── aspect-ratio fallback (iOS < 15) ── */
+    @supports not (aspect-ratio: 1 / 1) {
+      .stage.aspect-square { height: 0; padding-bottom: 100%; }
+      .stage.aspect-square > img,
+      .stage.aspect-square > .img-missing { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     }
 
-    /* ── Countdown digits (monospaced width) ── */
-    .cd-num { font-variant-numeric: tabular-nums; }
+    .modal-safe {
+      padding-top:    calc(2rem + env(safe-area-inset-top));
+      padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    }
+    .mobile-cart-bar { padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)); }
 
     /* ── Accessibility widget — vertical center, left edge ── */
     #a11y-btn {
-      position: fixed;
-      top: 50%;
-      left: 1rem;
-      z-index: 9999;
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #9D4EFF, #FF6B35);
+      position: fixed; top: 50%; left: 1rem; z-index: 9999;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--violet));
       border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      box-shadow: 0 4px 20px rgba(157,78,255,.5);
-      transform: translateY(-50%);
-      transition: transform .2s;
+      font-size: 20px; color: #fff;
+      box-shadow: 0 0 18px rgba(255,46,136,.55);
+      transform: translateY(-50%); transition: transform .2s;
     }
     #a11y-btn:hover  { transform: translateY(-50%) scale(1.08); }
     #a11y-btn:active { transform: translateY(-50%) scale(0.95); }
-
     #a11y-panel {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      left: calc(1rem + 56px);
-      z-index: 9999;
-      background: #1f0015;
-      border: 1px solid rgba(157,78,255,.5);
-      border-radius: 16px;
-      padding: 12px;
-      min-width: 210px;
-      box-shadow: 0 8px 32px rgba(0,0,0,.6);
+      position: fixed; top: 50%; transform: translateY(-50%); left: calc(1rem + 56px); z-index: 9999;
+      background: #150636; border: 1px solid rgba(34,211,255,.45); border-radius: 16px;
+      padding: 12px; min-width: 210px; box-shadow: 0 8px 32px rgba(0,0,0,.7), 0 0 24px rgba(34,211,255,.15);
       display: none; flex-direction: column; gap: 8px;
     }
     #a11y-panel.open { display: flex; }
     #a11y-panel .a11y-title {
-      font-size: 12px; font-weight: 800; letter-spacing: .08em;
-      color: #FF6B35; padding: 0 4px 4px;
-      border-bottom: 1px solid rgba(255,255,255,.1); text-align: center;
+      font-size: 12px; font-weight: 800; letter-spacing: .08em; color: var(--cyan);
+      padding: 0 4px 4px; border-bottom: 1px solid rgba(255,255,255,.1); text-align: center;
     }
     #a11y-panel button {
       display: flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 10px; color: #fdf4ee; font-family: 'Heebo', sans-serif;
+      border-radius: 10px; color: var(--chalk); font-family: 'Heebo', sans-serif;
       font-size: 13px; font-weight: 700; padding: 9px 12px;
       cursor: pointer; width: 100%; text-align: right; transition: background .15s;
     }
     #a11y-panel button:hover  { background: rgba(255,255,255,.14); }
-    #a11y-panel button.active { background: rgba(255,107,53,.3); border-color: #FF6B35; }
+    #a11y-panel button.active { background: rgba(34,211,255,.2); border-color: var(--cyan); }
     #a11y-panel .a11y-icon { font-size: 16px; }
 
     body.a11y-large-text    { font-size: 120% !important; }
     body.a11y-high-contrast { filter: contrast(1.5) brightness(1.1); }
     body.a11y-grayscale     { filter: grayscale(1); }
-    body.a11y-high-contrast.a11y-grayscale           { filter: grayscale(1) contrast(1.5) brightness(1.1); }
+    body.a11y-high-contrast.a11y-grayscale                 { filter: grayscale(1) contrast(1.5) brightness(1.1); }
     body.a11y-large-text.a11y-high-contrast.a11y-grayscale { filter: grayscale(1) contrast(1.5) brightness(1.1); }
   </style>
 </head>
 <body>
+
+<!-- AMBIENT NIGHT SKY · decorative only -->
+<div id="ambient" aria-hidden="true">
+  <div class="stars"></div>
+  <div class="stars s2"></div>
+  <div class="scanlines"></div>
+</div>
+
 <div id="root"></div>
 
 <!-- ACCESSIBILITY WIDGET -->
@@ -208,18 +491,18 @@
   var btn=document.getElementById('a11y-btn'),panel=document.getElementById('a11y-panel'),
       bL=document.getElementById('a11y-text-lg'),bC=document.getElementById('a11y-contrast'),
       bG=document.getElementById('a11y-grayscale'),bR=document.getElementById('a11y-reset'),b=document.body;
-  var s=JSON.parse(localStorage.getItem('a11y')||'{}');
+  var s={};try{s=JSON.parse(localStorage.getItem('a11y')||'{}');}catch(e){}
   if(s.large)   {b.classList.add('a11y-large-text');   bL.classList.add('active');bL.setAttribute('aria-pressed','true');}
   if(s.contrast){b.classList.add('a11y-high-contrast');bC.classList.add('active');bC.setAttribute('aria-pressed','true');}
   if(s.gray)    {b.classList.add('a11y-grayscale');    bG.classList.add('active');bG.setAttribute('aria-pressed','true');}
-  function save(){localStorage.setItem('a11y',JSON.stringify({large:b.classList.contains('a11y-large-text'),contrast:b.classList.contains('a11y-high-contrast'),gray:b.classList.contains('a11y-grayscale')}));}
+  function save(){try{localStorage.setItem('a11y',JSON.stringify({large:b.classList.contains('a11y-large-text'),contrast:b.classList.contains('a11y-high-contrast'),gray:b.classList.contains('a11y-grayscale')}));}catch(e){}}
   btn.addEventListener('click',function(){var o=panel.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
   document.addEventListener('click',function(e){if(!panel.contains(e.target)&&e.target!==btn){panel.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
   function toggle(cls,el){var on=b.classList.toggle(cls);el.classList.toggle('active',on);el.setAttribute('aria-pressed',on);save();}
   bL.addEventListener('click',function(){toggle('a11y-large-text',bL);});
   bC.addEventListener('click',function(){toggle('a11y-high-contrast',bC);});
   bG.addEventListener('click',function(){toggle('a11y-grayscale',bG);});
-  bR.addEventListener('click',function(){b.classList.remove('a11y-large-text','a11y-high-contrast','a11y-grayscale');[bL,bC,bG].forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});localStorage.removeItem('a11y');});
+  bR.addEventListener('click',function(){b.classList.remove('a11y-large-text','a11y-high-contrast','a11y-grayscale');[bL,bC,bG].forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});try{localStorage.removeItem('a11y');}catch(e){}});
 })();
 </script>
 
@@ -227,51 +510,340 @@
 <!-- type="text/jsx-source" is NOT auto-run by Babel; we transform it manually below
      with runtime:"classic" so JSX compiles to React.createElement (no ES-module import). -->
 <script type="text/jsx-source" id="app-source">
-const { useState, useCallback, useEffect } = React;
+const { useState, useCallback, useEffect, useRef } = React;
 
-/* ── CONFIG ── */
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYaYtQfKMaxJ04IeCN_UvqDRgcv3VOxCoQ8b5njd-pIWeO2iXFPht5RxuBuLGiDVDzmQ/exec';
-const SELECTOR_URL = 'https://selector.org.il/e/jPbB-gIr6Oj';
-const EVENT_NAME   = 'שיטים';
-const SIZES        = ['S', 'M', 'L', 'XL', 'XXL'];
-const DEADLINE     = new Date('2026-07-05T07:00:00+03:00').getTime();
+/* ══════════════════════════════════════════════════════════════════
+   CONFIG · everything to fill in before going live lives here
+   ══════════════════════════════════════════════════════════════════ */
 
-const priceFor = (n) => {
+// Google Apps Script Web App URL — the same script as the previous Shtutnik event.
+// The checkout waits for {ok:true} JSON from this script before it continues,
+// so the script's doPost must return that (see apps-script/Code.gs).
+// Deploy with "Who has access: Anyone", otherwise the request fails on CORS.
+// Empty = test mode: nothing is saved and a confirmation screen is shown instead.
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwYaYtQfKMaxJ04IeCN_UvqDRgcv3VOxCoQ8b5njd-pIWeO2iXFPht5RxuBuLGiDVDzmQ/exec';
+
+// Tab inside that Google Sheet where this event's orders go. Sent as `sheetName`.
+const SHEET_TAB = 'שנות ה80';
+
+// TODO before launch · the SELECTOR (סלקטור) checkout link. One link for every order.
+// Empty = the order is saved and a confirmation screen is shown instead of redirecting.
+const SELECTOR_CHECKOUT_LINK = '';
+
+/* How long to wait for the sheet before giving up (ms). The first call after a
+   fresh Apps Script deploy is "cold" and can take ~18s, so 30s, not 15s. */
+const REQUEST_TIMEOUT_MS = 30000;
+
+const EVENT_NAME = 'שטותניק בשנות ה-80';
+const EDITION    = '80s EDITION';
+// Order deadline: 4 Oct 2026, 12:00 Israel time. After it passes, the store locks itself.
+// +03:00 because Israel is still on summer time (IDT) until 25 Oct 2026.
+const DEADLINE   = new Date('2026-10-04T12:00:00+03:00').getTime();
+
+const LOGO_SRC = 'logo-neon.png';   // transparent, web-sized cut of logo.png
+const SIZES    = ['S', 'M', 'L', 'XL', 'XXL'];
+
+/* ── Pricing ──
+   Two product families, priced separately:
+   1. Shirts / tanks — quantity tiers, HARD CAP of MAX_SHIRTS per order.
+   2. Hoodies        — one flat price per unit, never part of the shirt tiers, no cap.
+   Cart total = shirt tier price + HOODIE_PRICE × hoodie count.
+
+   The cap is enforced in three places: the card button is disabled, addToCart
+   refuses a 4th shirt, and shirtsPriceFor never reads past the last tier — so a
+   price outside the table can't come out of any path. */
+const SHIRT_TIERS  = { 1: 129, 2: 239, 3: 329 };
+const MAX_SHIRTS   = 3;
+const HOODIE_PRICE = 199;
+
+const shirtsPriceFor = (n) => {
   if (n <= 0) return 0;
-  if (n === 1) return 129;
-  if (n === 2) return 219;
-  if (n === 3) return 309;
-  return 309 + (n - 3) * 100;
+  return SHIRT_TIERS[Math.min(n, MAX_SHIRTS)];
 };
 
+const countKind = (cart, kind) => cart.filter((it) => it.kind === kind).length;
+
+/* Single source of truth for every number shown in the cart — header, breakdown,
+   mobile bar and the payload sent to the sheet can never disagree. */
+const cartTotals = (cart) => {
+  var shirts       = countKind(cart, 'shirt');
+  var hoodies      = countKind(cart, 'hoodie');
+  var shirtsPrice  = shirtsPriceFor(shirts);
+  var hoodiesPrice = HOODIE_PRICE * hoodies;
+  return {
+    count:        cart.length,
+    shirts:       shirts,
+    hoodies:      hoodies,
+    shirtsPrice:  shirtsPrice,
+    hoodiesPrice: hoodiesPrice,
+    total:        shirtsPrice + hoodiesPrice,
+  };
+};
+
+const shirtsFull  = (n) => n >= MAX_SHIRTS;
+const paymentLink = () => (typeof SELECTOR_CHECKOUT_LINK === 'string' && SELECTOR_CHECKOUT_LINK.trim()) ? SELECTOR_CHECKOUT_LINK.trim() : '';
+
+// Israeli phone: 9–10 digits after stripping spaces, dashes, brackets and +972
+const digitsOf   = (v) => String(v || '').replace(/\D/g, '');
+const phoneValid = (v) => {
+  var d = digitsOf(v);
+  if (d.indexOf('972') === 0) d = '0' + d.slice(3);
+  return d.length >= 9 && d.length <= 10;
+};
+
+/* ── Garment types for the shirt designs ── */
+const TYPES = [
+  { id: 'shirt', label: 'חולצה',  icon: '👕' },
+  { id: 'tank',  label: 'גופייה', icon: '🎽' },
+];
+const typeLabel = (id) => (TYPES.find((t) => t.id === id) || {}).label || id;
+
+/* Every product comes in exactly these three colors: black, white, beige. */
+const COLORS = {
+  black: { color: 'שחור', hex: '#12161C' },
+  white: { color: 'לבן',  hex: '#F4F2FA' },
+  beige: { color: "בז'",  hex: '#D9C7A8' },
+};
+
+/* ── The 3 designs · one fixed color each ──
+   slug = the design's color key, and builds the file name next to index.html:
+   shirt-<slug>.jpg / tank-<slug>.jpg  (e.g. shirt-black.jpg, tank-beige.jpg).
+   TODO · names and taglines are placeholders until the final artwork is ready. */
 const DESIGNS = [
-  { id: 1, label: 'A', color: "בז'",  shirt: 'shirt1.jpg', tank: 'tank1.jpg' },
-  { id: 2, label: 'B', color: 'שחור', shirt: 'shirt2.jpg', tank: 'tank2.jpg' },
-  { id: 3, label: 'C', color: 'לבן',  shirt: 'shirt3.jpg', tank: 'tank3.jpg' },
+  { id: 1, label: 'A', slug: 'black', name: 'עיצוב A', color: COLORS.black.color, hex: COLORS.black.hex,
+    tagline: 'שמש מפוספסת ורשת ניאון בוורוד וטורקיז, שקופצות על רקע שחור עמוק.' },
+  { id: 2, label: 'B', slug: 'white', name: 'עיצוב B', color: COLORS.white.color, hex: COLORS.white.hex,
+    tagline: 'דקלים, קסטה ואותיות כרום בסגנון רטרו, על בד לבן ונקי.' },
+  { id: 3, label: 'C', slug: 'beige', name: 'עיצוב C', color: COLORS.beige.color, hex: COLORS.beige.hex,
+    tagline: 'גרפיקה בסטייל VHS בגוונים של שקיעה, על בז׳ חמים.' },
 ];
 
-/* ── HELPERS ── */
-function Img({ src, alt, className }) {
+/* ── Hoodie colors ── file name: hoodie-<slug>.jpg */
+const HOODIES = [
+  { id: 1, label: 'H1', slug: 'black', color: COLORS.black.color, hex: COLORS.black.hex,
+    tagline: 'הקלאסיקה — הולך עם הכל, מהרחבה ועד הבית.' },
+  { id: 2, label: 'H2', slug: 'white', color: COLORS.white.color, hex: COLORS.white.hex,
+    tagline: 'נקי ובהיר, למי שאוהב שהעיצוב יבלוט.' },
+  { id: 3, label: 'H3', slug: 'beige', color: COLORS.beige.color, hex: COLORS.beige.hex,
+    tagline: 'גוון חמים ורך, בדיוק לערבים הקרירים של החורף.' },
+];
+
+/* Two sizes of every mockup:
+     img/<name>.jpg  1200px web copy — cards and cart (made by tools/optimize-images.ps1)
+     <name>.jpg      full-res original in the root — zoom lightbox only */
+const WEB_IMG_DIR  = 'img/';
+const imgFor       = (design, type) => WEB_IMG_DIR + type + '-' + design.slug + '.jpg';
+const imgForHoodie = (hoodie)       => WEB_IMG_DIR + 'hoodie-' + hoodie.slug + '.jpg';
+const fullRes      = (webSrc)       => webSrc.replace(WEB_IMG_DIR, '');
+
+const IS_LOCAL = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(location.hostname);
+
+const configMissing = () => {
+  var m = [];
+  if (!SHEET_URL) m.push('SHEET_URL');
+  if (!paymentLink()) m.push('SELECTOR_CHECKOUT_LINK');
+  return m;
+};
+
+/* ══════════════════════════════════════════════════════════════════
+   HELPERS
+   ══════════════════════════════════════════════════════════════════ */
+
+function Img({ src, alt, className, compact }) {
   className = className || '';
   const [err, setErr] = useState(false);
-  if (err) return <div className={'img-missing ' + className}>Missing:<br />{src}</div>;
-  return <img src={src} alt={alt} className={className} onError={() => setErr(true)} loading="lazy" />;
+  useEffect(function () { setErr(false); }, [src]);
+  if (err && compact) return <div className={'img-missing !p-0 !border ' + className}>🌴</div>;
+  if (err) {
+    return (
+      <div className={'img-missing ' + className}>
+        <div className="text-2xl">🌴</div>
+        <div className="text-xs font-bold">תמונה בדרך</div>
+        <code>{src}</code>
+      </div>
+    );
+  }
+  return <img src={src} alt={alt} className={className} onError={() => setErr(true)}
+              loading="lazy" decoding="async" />;
 }
 
-function NavLogo() {
+function Logo({ className, eager }) {
   const [err, setErr] = useState(false);
+  if (err) return <span className={'chrome font-display font-black ' + (className || '')}>Shtutnik</span>;
+  return <img src={LOGO_SRC} alt="Shtutnik & Sky High" onError={() => setErr(true)}
+              loading={eager ? 'eager' : 'lazy'} decoding="async"
+              className={'object-contain ' + (className || '')} />;
+}
+
+function ColorDot({ hex, className }) {
+  return <span className={'inline-block rounded-full border border-white/40 shrink-0 ' + (className || 'w-3.5 h-3.5')}
+               style={{ background: hex, boxShadow: '0 0 8px ' + hex + '66' }} aria-hidden="true" />;
+}
+
+function SectionHead({ eyebrow, title, children }) {
   return (
-    <div className="flex items-center gap-2">
-      {!err
-        ? <img src="logo.png" alt="Shtutnik" className="h-9 w-auto object-contain" onError={() => setErr(true)} />
-        : <span className="neon-text font-black text-xl">👽 Shtutnik</span>}
+    <div className="text-center mb-9 md:mb-11">
+      <div className="eyebrow neon-cyan mb-3">{eyebrow}</div>
+      <h2 className="font-display font-black text-4xl md:text-6xl chrome leading-[1.1] pb-1">{title}</h2>
+      {children}
     </div>
   );
 }
 
-/* ── COUNTDOWN ── */
+function Chips({ items }) {
+  return (
+    <div className="flex flex-wrap justify-center gap-2 mt-5">
+      {items.map((chip, i) => (
+        <div key={i} className="panel flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm">
+          <span>{chip.icon}</span>
+          <span className="font-bold text-chalk/80">{chip.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SizePicker({ size, onPick, disabled }) {
+  return (
+    <div>
+      <div className="eyebrow text-chalk/45 mb-2" style={{ letterSpacing: '.18em' }}>SIZE · מידה</div>
+      <div className="flex gap-2 flex-wrap" dir="ltr">
+        {SIZES.map((s) => (
+          <button key={s} onClick={() => onPick(s)} aria-pressed={size === s} disabled={disabled}
+            className={'opt min-w-[46px] h-11 px-3 rounded-lg text-sm font-black font-retro ' + (size === s ? 'on' : '') +
+              (disabled ? ' opacity-40 cursor-not-allowed' : '')}>
+            {s}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* Store locks itself once the deadline passes. Checks every 20s. */
+function useClosed() {
+  const [closed, setClosed] = useState(Date.now() >= DEADLINE);
+  useEffect(function () {
+    if (closed) return;
+    var id = setInterval(function () { if (Date.now() >= DEADLINE) setClosed(true); }, 20000);
+    return function () { clearInterval(id); };
+  }, [closed]);
+  return closed;
+}
+
+/* Scroll reveal. Waits for Tailwind (CDN, runtime) and images to settle, then hides
+   only what is below the fold — anything already on screen is never hidden. */
+function useReveal() {
+  useEffect(function () {
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || !('IntersectionObserver' in window)) return;
+    var io = null;
+    var start = setTimeout(function () {
+      var els = document.querySelectorAll('[data-reveal]');
+      var vh  = window.innerHeight || document.documentElement.clientHeight;
+      io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+      Array.prototype.forEach.call(els, function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92) return;
+        var d = parseInt(el.getAttribute('data-reveal'), 10);   // stagger in ms; bare attr = "true"
+        if (d > 0) el.style.transitionDelay = d + 'ms';
+        el.classList.add('reveal');
+        io.observe(el);
+      });
+    }, 450);
+    // safety net: never leave anything hidden
+    var safety = setTimeout(function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function (el) { el.classList.add('is-visible'); });
+    }, 15000);
+    return function () { clearTimeout(start); clearTimeout(safety); if (io) io.disconnect(); };
+  }, []);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   HERO SCENERY · sunset, mountains, running grid, palms
+   ══════════════════════════════════════════════════════════════════ */
+
+function Palm({ side }) {
+  return (
+    <div className={'palm ' + side} aria-hidden="true">
+      <svg viewBox="0 0 210 420" fill="#07020F">
+        <path d="M96 420 C100 320 106 220 118 116 L128 118 C118 220 114 320 112 420 Z" />
+        <path d="M100 360 L114 356 M101 320 L115 316 M103 280 L117 276 M105 240 L119 236 M108 200 L121 196 M111 160 L124 157"
+              stroke="#2A0B4F" strokeWidth="2" />
+        <path d="M123 112 Q62 78 14 176 Q66 102 123 122 Z" />
+        <path d="M123 112 Q70 46 26 70 Q80 68 123 120 Z" />
+        <path d="M123 112 Q100 46 86 18 Q112 58 127 116 Z" />
+        <path d="M123 112 Q152 34 184 40 Q148 62 127 118 Z" />
+        <path d="M123 112 Q184 78 206 170 Q170 104 123 122 Z" />
+        <path d="M123 112 Q176 64 210 92 Q162 88 124 120 Z" />
+        <circle cx="117" cy="124" r="6" /><circle cx="129" cy="126" r="6" /><circle cx="123" cy="132" r="5" />
+      </svg>
+    </div>
+  );
+}
+
+function Scenery() {
+  return (
+    <div className="scene" aria-hidden="true">
+      <div className="sun-glow" />
+      <div className="sun" />
+      <div className="mountains">
+        <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="mtnBack" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#3B0F6B" /><stop offset="100%" stopColor="#12052B" />
+            </linearGradient>
+            <linearGradient id="mtnFront" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#1E0845" /><stop offset="100%" stopColor="#0B0320" />
+            </linearGradient>
+          </defs>
+          <polygon points="0,160 0,80 90,40 190,92 300,20 420,96 520,52 640,110 740,30 860,100 960,46 1080,96 1200,58 1200,160"
+                   fill="url(#mtnBack)" stroke="#A43BFF" strokeOpacity=".7" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+          <polygon points="0,160 0,120 120,84 230,126 350,70 470,130 590,92 700,136 820,80 940,128 1060,94 1200,124 1200,160"
+                   fill="url(#mtnFront)" stroke="#FF2E88" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+        </svg>
+      </div>
+      <div className="floor"><div className="floor-plane" /></div>
+      <div className="horizon-line" />
+      <Palm side="left" />
+      <Palm side="right" />
+    </div>
+  );
+}
+
+function Marquee() {
+  var words = ['PRE-ORDER', EDITION, 'MADE IN ISRAEL', 'SHTUTNIK × SKY HIGH', '3 DESIGNS + HOODIES', 'PICK UP AT THE EVENT'];
+  var row = words.concat(words);
+  return (
+    <div className="marquee border-y border-neonPink/30 bg-night/80 py-3" dir="ltr" aria-hidden="true"
+         style={{ boxShadow: '0 0 24px rgba(255,46,136,.18)' }}>
+      <div className="marquee-track">
+        {[0, 1].map((k) => (
+          <div key={k} className="flex shrink-0">
+            {row.map((w, i) => (
+              <span key={k + '-' + i} className={'font-retro text-sm tracking-[0.25em] px-6 ' + (i % 2 ? 'neon-cyan' : 'neon-pink')}>
+                {w} <span className="text-sunset ms-6">✦</span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   COUNTDOWN
+   ══════════════════════════════════════════════════════════════════ */
+
 function Countdown() {
-  var calcTime = function() {
+  var calcTime = function () {
     var diff = Math.max(0, DEADLINE - Date.now());
     return {
       days:    Math.floor(diff / 86400000),
@@ -282,344 +854,882 @@ function Countdown() {
     };
   };
   const [t, setT] = useState(calcTime);
-  useEffect(function() {
-    var id = setInterval(function() { setT(calcTime()); }, 1000);
-    return function() { clearInterval(id); };
+  useEffect(function () {
+    var id = setInterval(function () { setT(calcTime()); }, 1000);
+    return function () { clearInterval(id); };
   }, []);
 
-  if (t.done) return <span className="text-neonYellow font-black text-lg">ההזמנות נסגרו!</span>;
+  if (t.done) return <div className="font-display font-black text-2xl neon-pink">ההזמנות נסגרו. נתראה על הרחבה 🌴</div>;
 
   var units = [
-    { v: t.days,    l: 'ימים'  },
-    { v: t.hours,   l: 'שעות'  },
-    { v: t.minutes, l: 'דקות'  },
-    { v: t.seconds, l: 'שניות' },
+    { v: t.days, l: 'ימים' }, { v: t.hours, l: 'שעות' },
+    { v: t.minutes, l: 'דקות' }, { v: t.seconds, l: 'שניות' },
   ];
   return (
-    <div className="flex gap-2 justify-center" dir="ltr">
-      {units.map((u) => (
-        <div key={u.l} className="flex flex-col items-center px-3 py-2 rounded-xl bg-white/[0.08] border border-white/15 min-w-[54px]">
-          <span className="text-2xl font-black text-neonYellow cd-num">{String(u.v).padStart(2,'0')}</span>
-          <span className="text-[10px] text-white/55 font-bold">{u.l}</span>
-        </div>
+    <div className="flex items-start gap-1.5 sm:gap-3 justify-center" dir="ltr" role="timer" aria-live="off">
+      {units.map((u, i) => (
+        <React.Fragment key={u.l}>
+          {i > 0 && <span className="led text-2xl sm:text-4xl pt-3 sm:pt-4 opacity-70">:</span>}
+          <div className="panel rounded-xl flex flex-col items-center px-2.5 sm:px-4 pt-3 pb-2 min-w-[62px] sm:min-w-[84px]">
+            <span className="led text-3xl sm:text-5xl leading-none">{String(u.v).padStart(2, '0')}</span>
+            <span className="text-[11px] text-chalk/50 font-bold mt-2">{u.l}</span>
+          </div>
+        </React.Fragment>
       ))}
     </div>
   );
 }
 
-/* ── DESIGN CARD ── */
-function DesignCard({ design, onAdd }) {
-  const [type, setType]           = useState('חולצה');
+/* ══════════════════════════════════════════════════════════════════
+   PRODUCT CARD · shirt/tank · fixed-color design + garment type + size
+   ══════════════════════════════════════════════════════════════════ */
+
+function ProductCard({ design, onAdd, onZoom, cartFull, closed, index }) {
+  const [type, setType]           = useState('shirt');
   const [size, setSize]           = useState('');
   const [justAdded, setJustAdded] = useState(false);
-  const activeImg = type === 'חולצה' ? design.shirt : design.tank;
+
+  const activeImg = imgFor(design, type);
+
+  const switchType = (t) => {
+    if (t === type) return;
+    setType(t);
+    setSize('');
+  };
+
+  const ready = !!size && !cartFull && !closed;
 
   const handleAdd = () => {
-    if (!size) return;
-    onAdd({ uid: design.id + '-' + type + '-' + size + '-' + Date.now(), design, type, size, image: activeImg });
-    setJustAdded(true); setSize('');
+    if (!ready) return;
+    onAdd({
+      uid:         'S' + design.id + '-' + type + '-' + size + '-' + Date.now(),
+      kind:        'shirt',
+      designId:    design.id,
+      designLabel: design.label,
+      designName:  design.name,
+      colorLabel:  design.color,
+      colorHex:    design.hex,
+      type:        type,
+      typeLabel:   typeLabel(type),
+      size:        size,
+      image:       activeImg,
+    });
+    setJustAdded(true);
+    setSize('');
     setTimeout(() => setJustAdded(false), 1800);
   };
 
-  var thumbs = [
-    { key: 'חולצה',  src: design.shirt, label: 'חולצה'  },
-    { key: 'גופייה', src: design.tank,  label: 'גופייה' },
-  ];
+  var btnLabel = closed ? 'ההזמנות נסגרו'
+    : justAdded ? '✓ נכנס לעגלה!'
+    : cartFull ? 'הגעתם ל-' + MAX_SHIRTS + ' חולצות/גופיות · המקסימום'
+    : !size ? 'בחרו מידה'
+    : '+ הוסיפו ' + typeLabel(type) + ' · ' + size;
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.03] hover:border-ember/30 transition-all duration-300 overflow-hidden flex flex-col">
-      <div className="relative aspect-square overflow-hidden bg-ink">
-        <Img src={activeImg} alt={'דיזיין ' + design.label + ' · ' + type} className="w-full h-full object-cover transition-opacity duration-300" />
-        <div className="absolute top-3 start-3 flex flex-col gap-1">
-          <div className="px-2.5 py-1 rounded-full bg-ink/80 backdrop-blur border border-white/20 font-black text-sm text-white">{design.label}</div>
-          <div className="px-2.5 py-1 rounded-full bg-ink/80 backdrop-blur border border-white/10 text-[11px] font-bold text-white/80">{design.color}</div>
+    <div className="panel panel-hover rounded-2xl overflow-hidden flex flex-col" data-reveal={(index || 0) * 110}>
+      <button
+        onClick={() => onZoom({ src: fullRes(activeImg), alt: design.name + ' · ' + typeLabel(type) })}
+        aria-label="הגדלת תמונה"
+        className="stage relative aspect-square block w-full text-start group">
+        <Img src={activeImg} alt={design.name + ' · ' + typeLabel(type) + ' · ' + design.color}
+             className="product-img w-full h-full object-cover" />
+        <div className="absolute top-3 start-3 z-10 px-3 py-1 rounded-lg bg-ink/80 backdrop-blur border border-neonPink/60 font-retro text-sm neon-pink">
+          {design.label}
         </div>
+        <div className="absolute bottom-3 end-3 z-10 px-2 py-1 rounded-lg bg-ink/75 backdrop-blur text-[11px] text-chalk/70">🔍</div>
+      </button>
+
+      <div className="px-4 pt-4">
+        <h3 className="flex items-center gap-2 text-xl font-display font-black">
+          <ColorDot hex={design.hex} className="w-4 h-4" />
+          {design.name}
+          <span className="text-sm font-bold text-chalk/50">· {design.color}</span>
+        </h3>
+        <p className="text-[13px] text-chalk/50 leading-snug mt-1.5">{design.tagline}</p>
       </div>
 
       <div className="flex gap-2 px-4 pt-4">
-        {thumbs.map((th) => (
-          <button key={th.key}
-            onClick={() => { setType(th.key); setSize(''); }}
-            aria-pressed={type === th.key}
-            className={'relative flex-1 rounded-xl overflow-hidden border-2 transition-all ' + (type === th.key ? 'border-ember shadow-glow-ember' : 'border-white/10 hover:border-white/30')}
-            style={{ aspectRatio: '1/1' }}>
-            <Img src={th.src} alt={th.label} className="w-full h-full object-cover" />
-            <div className={'absolute inset-0 flex items-end justify-center pb-1.5 text-[11px] font-black transition ' + (type === th.key ? 'bg-ember/25 text-white' : 'bg-black/45 text-white/75')}>{th.label}</div>
+        {TYPES.map((th) => (
+          <button key={th.id} onClick={() => switchType(th.id)} aria-pressed={type === th.id}
+            className={'opt flex-1 rounded-xl py-3 text-sm font-black min-h-[48px] ' + (type === th.id ? 'on' : '')}>
+            <span className="me-1">{th.icon}</span>{th.label}
           </button>
         ))}
       </div>
 
       <div className="p-4 flex flex-col gap-4 flex-1">
-        <div>
-          <div className="text-[11px] font-bold text-white/50 mb-2">מידה</div>
-          <div className="flex gap-2 flex-wrap" dir="ltr">
-            {SIZES.map((s) => (
-              <button key={s} onClick={() => setSize(s)} aria-pressed={size === s}
-                className={'min-w-[44px] h-11 px-3 rounded-full text-sm font-black border transition ' + (size === s ? 'border-ember bg-ember/20 text-ember shadow-glow-ember' : 'border-white/20 text-white/80 hover:border-white/50 active:scale-95')}>
-                {s}
-              </button>
-            ))}
-          </div>
-        </div>
-        <button onClick={handleAdd} disabled={!size}
-          className={'rounded-full w-full py-4 text-base font-black transition min-h-[52px] ' + (justAdded ? 'bg-[#25D366] text-white scale-95' : size ? 'bg-gradient-to-r from-ember to-neonPink text-white shadow-glow-ember hover:scale-[1.02] active:scale-95' : 'bg-white/[0.08] text-white/35 cursor-not-allowed')}>
-          {justAdded ? '✓ נוסף לעגלה!' : size ? '+ הוסף ' + type + ' · ' + size : 'בחר מידה קודם'}
+        <SizePicker size={size} onPick={setSize} disabled={closed || cartFull} />
+        <button onClick={handleAdd} disabled={!ready}
+          className={'mt-auto rounded-xl w-full py-4 text-base font-black min-h-[52px] transition ' +
+            (justAdded ? 'btn-done' : ready ? 'btn-sunset sheen' : 'btn-off')}>
+          {btnLabel}
         </button>
       </div>
     </div>
   );
 }
 
-/* ── LIGHTBOX ── */
-function Lightbox({ src, alt, onClose }) {
-  useEffect(function() {
-    if (!src) return;
-    document.body.classList.add('no-scroll');
-    var fn = function(e) { if (e.key === 'Escape') onClose(); };
-    window.addEventListener('keydown', fn);
-    return function() { document.body.classList.remove('no-scroll'); window.removeEventListener('keydown', fn); };
-  }, [src, onClose]);
-  if (!src) return null;
+/* ══════════════════════════════════════════════════════════════════
+   HOODIE CARD · one card for every hoodie; color is a picker inside it.
+   Fewer visual duplicates, shorter path: see hoodie → color → size → add.
+   ══════════════════════════════════════════════════════════════════ */
+
+function HoodieCard({ onAdd, onZoom, closed }) {
+  const [colorIdx, setColorIdx]   = useState(0);
+  const [size, setSize]           = useState('');
+  const [justAdded, setJustAdded] = useState(false);
+
+  const hoodie = HOODIES[colorIdx];
+  const img    = imgForHoodie(hoodie);
+  const ready  = !!size && !closed;
+
+  /* Switching color does NOT reset the size (unlike shirt ↔ tank): it is the same
+     garment in another shade, so resetting would throw away a choice already made. */
+
+  const handleAdd = () => {
+    if (!ready) return;
+    onAdd({
+      uid:         'H' + hoodie.id + '-' + size + '-' + Date.now(),
+      kind:        'hoodie',
+      designId:    hoodie.id,
+      designLabel: hoodie.label,
+      designName:  'קפוצ׳ון',
+      colorLabel:  hoodie.color,
+      colorHex:    hoodie.hex,
+      type:        'hoodie',
+      typeLabel:   'קפוצ׳ון',
+      size:        size,
+      image:       img,
+    });
+    setJustAdded(true);
+    setSize('');
+    setTimeout(() => setJustAdded(false), 1800);
+  };
+
+  var btnLabel = closed ? 'ההזמנות נסגרו'
+    : justAdded ? '✓ נכנס לעגלה!'
+    : !size ? 'בחרו מידה'
+    : '+ הוסיפו קפוצ׳ון ' + hoodie.color + ' · ' + size;
+
   return (
-    <div role="dialog" aria-modal="true" aria-label="תצוגה מורחבת"
-      className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-fadein"
-      onClick={onClose}>
-      <button onClick={(e) => { e.stopPropagation(); onClose(); }} aria-label="סגור"
-        className="absolute top-4 end-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center">✕</button>
-      <Img src={src} alt={alt} className="max-w-[92vw] max-h-[88vh] object-contain rounded-2xl shadow-glow-ember" />
+    /* flagship-halo paints the glow behind (::before, z-0) so the card needs z-10 */
+    <div className="relative flagship-halo w-full max-w-lg mx-auto" data-reveal>
+      <div className="relative z-10 panel panel-flagship rounded-2xl overflow-hidden flex flex-col">
+
+        <button onClick={() => onZoom({ src: fullRes(img), alt: 'קפוצ׳ון ' + hoodie.color })}
+          aria-label="הגדלת תמונה"
+          className="stage relative aspect-square block w-full text-start group">
+          <Img src={img} alt={'קפוצ׳ון ' + hoodie.color}
+               className="product-img w-full h-full object-cover" />
+
+          {/* Price tag — the loudest element on the card, on purpose.
+              right-4 (physical), not end-4: in RTL `end` means left, and the tag
+              belongs bottom-right, away from the chest print. */}
+          <div className="absolute bottom-4 right-4 z-10 px-5 py-2.5 rounded-2xl btn-sunset -rotate-3">
+            <div className="font-retro text-3xl sm:text-4xl leading-none">
+              {HOODIE_PRICE}<span className="text-xl sm:text-2xl">₪</span>
+            </div>
+          </div>
+          <div className="absolute top-3 start-3 z-10 px-3 py-1 rounded-lg bg-ink/80 backdrop-blur border border-neonCyan/60 font-retro text-xs neon-cyan tracking-widest">
+            HOODIE
+          </div>
+          <div className="absolute bottom-3 left-3 z-10 px-2 py-1 rounded-lg bg-ink/75 backdrop-blur text-[11px] text-chalk/70">🔍</div>
+        </button>
+
+        <div className="px-4 pt-4">
+          <h3 className="flex items-center gap-2 text-xl font-display font-black">
+            <ColorDot hex={hoodie.hex} className="w-4 h-4" />
+            קפוצ׳ון {hoodie.color}
+          </h3>
+          <p className="text-[13px] text-chalk/50 leading-snug mt-1.5">{hoodie.tagline}</p>
+        </div>
+
+        <div className="px-4 pt-4">
+          <div className="eyebrow text-chalk/45 mb-2" style={{ letterSpacing: '.18em' }}>COLOR · צבע</div>
+          <div className="flex gap-2">
+            {HOODIES.map((h, i) => (
+              <button key={h.id} onClick={() => setColorIdx(i)} aria-pressed={colorIdx === i}
+                aria-label={'צבע ' + h.color}
+                className={'opt flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-black min-h-[48px] ' + (colorIdx === i ? 'on' : '')}>
+                <ColorDot hex={h.hex} className="w-4 h-4" />
+                {h.color}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="p-4 flex flex-col gap-4 flex-1">
+          <SizePicker size={size} onPick={setSize} disabled={closed} />
+          <button onClick={handleAdd} disabled={!ready}
+            className={'mt-auto rounded-xl w-full py-4 text-base font-black min-h-[52px] transition ' +
+              (justAdded ? 'btn-done' : ready ? 'btn-sunset sheen' : 'btn-off')}>
+            {btnLabel}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
-/* ── APP ── */
+/* ══════════════════════════════════════════════════════════════════
+   LIGHTBOX
+   ══════════════════════════════════════════════════════════════════ */
+
+function Lightbox({ src, alt, onClose }) {
+  useEffect(function () {
+    if (!src) return;
+    document.body.classList.add('no-scroll');
+    var fn = function (e) { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', fn);
+    return function () { document.body.classList.remove('no-scroll'); window.removeEventListener('keydown', fn); };
+  }, [src, onClose]);
+  if (!src) return null;
+  return (
+    <div role="dialog" aria-modal="true" aria-label="תצוגה מורחבת"
+      className="fixed inset-0 z-50 bg-ink/95 backdrop-blur-md flex items-center justify-center p-4 animate-fadein"
+      onClick={onClose}>
+      <button onClick={(e) => { e.stopPropagation(); onClose(); }} aria-label="סגור"
+        className="absolute top-4 end-4 w-12 h-12 rounded-full btn-ghost text-2xl flex items-center justify-center">✕</button>
+      <Img src={src} alt={alt} className="max-w-[92vw] max-h-[88vh] min-w-[260px] min-h-[260px] object-contain rounded-2xl shadow-glow-pink" />
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SUCCESS MODAL · only shown when there is no payment link to redirect to
+   ══════════════════════════════════════════════════════════════════ */
+
+function SuccessModal({ order, onClose }) {
+  useEffect(function () {
+    if (!order) return;
+    document.body.classList.add('no-scroll');
+    return function () { document.body.classList.remove('no-scroll'); };
+  }, [order]);
+  if (!order) return null;
+  return (
+    <div role="dialog" aria-modal="true" aria-label="ההזמנה נקלטה"
+      className="fixed inset-0 z-50 bg-ink/90 backdrop-blur-md overflow-y-auto overscroll-contain
+                 flex items-start sm:items-center justify-center px-4 py-8 modal-safe animate-fadein">
+      <div className="relative max-w-md w-full my-auto rounded-2xl panel panel-flagship p-5 sm:p-7 text-center">
+        <div className="text-4xl mb-3">🌴</div>
+        <h3 className="font-display font-black text-3xl chrome mb-2">שמור לכם.</h3>
+        <p className="text-chalk/70 text-sm leading-relaxed mb-5">
+          תודה {order.name} — {order.quantity} {order.quantity === 1 ? 'פריט' : 'פריטים'} על סך {order.totalPrice}₪ נרשמו על השם שלכם.
+          ממש בקרוב נשלח לכם קישור לתשלום מאובטח בסלקטור, יחד עם הפרטים לאיסוף באירוע.
+        </p>
+        <div className="text-start text-xs text-chalk/60 bg-white/[0.04] border border-neonCyan/20 rounded-xl p-3 mb-3 leading-relaxed">
+          {order.details}
+        </div>
+        <div className="text-[11px] text-chalk/40 mb-5 font-retro tracking-widest" dir="ltr">ORDER {order.orderId}</div>
+        <button onClick={onClose} className="btn-sunset sheen w-full rounded-xl py-4 font-black min-h-[52px]">
+          נתראה על הרחבה 🌴
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PRICING · derived from SHIRT_TIERS / HOODIE_PRICE, never typed by hand
+   ══════════════════════════════════════════════════════════════════ */
+
+function Pricing({ onJump, onJumpHoodies }) {
+  var tiers = [1, 2, 3].map(function (q) {
+    var price = SHIRT_TIERS[q];
+    return {
+      q: q, price: price,
+      save: SHIRT_TIERS[1] * q - price,
+      per:  Math.round(price / q),
+      label: q === 1 ? 'פריט אחד' : q === 2 ? 'שני פריטים' : 'שלושה פריטים',
+      note:  q === 1 ? 'למי שכבר יודע בדיוק איזה עיצוב הוא רוצה.'
+           : q === 2 ? 'אחד לכם, ואחד לחבר שרוקד לידכם.'
+           :           'אחד מכל עיצוב, במחיר הכי טוב ליחידה.',
+      best: q === 3,
+    };
+  });
+
+  return (
+    <section className="relative max-w-5xl mx-auto px-4 py-14 md:py-20">
+      <SectionHead eyebrow="PRICE LIST · המחירים" title="כמה זה עולה?">
+        <p className="text-chalk/60 text-sm md:text-base max-w-xl mx-auto mt-4 leading-relaxed">
+          בחולצות ובגופיות, ככל שלוקחים יותר המחיר ליחידה יורד. מערבבים עיצובים, סוגים ומידות איך שבא לכם — עד {MAX_SHIRTS} פריטים בהזמנה.
+        </p>
+      </SectionHead>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" data-reveal>
+        {tiers.map((t) => (
+          <div key={t.q}
+            className={'panel rounded-2xl p-5 pt-7 text-center relative flex flex-col ' + (t.best ? 'panel-flagship' : '')}>
+            {t.best && (
+              <div className="absolute -top-3 start-1/2 -translate-x-1/2 px-3 py-1 rounded-full btn-sunset text-[11px] font-black whitespace-nowrap">
+                הכי משתלם ⚡
+              </div>
+            )}
+            <div className="text-xs font-black text-chalk/50">{t.label}</div>
+            <div className="font-retro text-5xl neon-grad mt-3 mb-1">{t.price}<span className="text-2xl">₪</span></div>
+            <div className="text-[12px] text-chalk/45 mb-3">{t.q > 1 ? '≈ ' + t.per + '₪ לפריט' : 'מחיר ליחידה'}</div>
+            {t.save > 0 && (
+              <div className="self-center mb-3 px-2.5 py-1 rounded-lg border border-neonCyan/40 bg-neonCyan/[0.08] neon-cyan text-[12px] font-bold">
+                חוסכים {t.save}₪
+              </div>
+            )}
+            <p className="text-xs text-chalk/55 leading-relaxed mt-auto">{t.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <p className="text-center text-xs text-chalk/40 mt-5 leading-relaxed">
+        אותו מחיר לחולצה ולגופייה · עד {MAX_SHIRTS} חולצות/גופיות בהזמנה · קפוצ׳ונים בלי הגבלה
+      </p>
+
+      <div className="panel rounded-2xl p-5 mt-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-start" data-reveal>
+        <div className="font-retro text-4xl neon-grad shrink-0">{HOODIE_PRICE}₪</div>
+        <div className="flex-1">
+          <div className="font-display font-black text-lg">קפוצ׳ונים · מחיר אחיד ליחידה</div>
+          <p className="text-xs text-chalk/55 leading-relaxed mt-1">
+            מחיר קבוע ובלי הגבלת כמות. הקפוצ׳ונים לא נכנסים למדרגות של החולצות — מצרפים אותם לכל הזמנה, והמחיר פשוט מתווסף.
+          </p>
+        </div>
+        <button onClick={onJumpHoodies} className="btn-ghost shrink-0 rounded-xl px-6 py-3 text-sm font-black min-h-[48px] whitespace-nowrap">
+          לקפוצ׳ונים ↓
+        </button>
+      </div>
+
+      <div className="text-center mt-8">
+        <button onClick={onJump} className="btn-sunset sheen rounded-xl px-9 py-4 text-base font-black min-h-[52px]">
+          קחו אותי לעיצובים 🌴
+        </button>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   STORY · what the community should know about this drop: made in Israel,
+   the quality they already know, the 80s edition, and the new hoodies
+   ══════════════════════════════════════════════════════════════════ */
+
+function Story({ onJumpHoodies }) {
+  var points = [
+    { icon: '🇮🇱', title: 'מיוצר בישראל',
+      text: 'כל פריט מיוצר ומודפס כאן בישראל. אנחנו מלווים את הייצור מקרוב, ולא משחררים שום פריט שלא היינו לובשים בעצמנו.' },
+    { icon: '✅', title: 'האיכות שאתם כבר מכירים',
+      text: 'מי שלבש את המרצ׳ שלנו מהאירועים הקודמים יודע: בד נעים שכיף לרקוד בו שעות, והדפס חד שמחזיק מעמד. הפעם העלינו את הרף עוד קצת.' },
+    { icon: '🌴', title: 'מהדורת שנות ה-80',
+      text: 'שלושה עיצובים שנבנו במיוחד לאירוע הזה. כל פעם שתלבשו אותם, תחזרו לאווירה שאנחנו יוצרים ביחד על הרחבה.' },
+    { icon: '🧥', title: 'חדש: קפוצ׳ונים',
+      text: 'החורף מתקרב, ביקשתם — והבאנו. קפוצ׳ונים איכותיים באותה רמה של החולצות, מיוצרים גם הם בישראל.' },
+  ];
+  return (
+    <section className="max-w-5xl mx-auto px-4 py-14 md:py-20">
+      <SectionHead eyebrow="MADE IN ISRAEL · הסיפור" title="עשוי כאן. עשוי בשבילכם.">
+        <p className="text-chalk/65 text-base md:text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
+          שטותניקים, את המרצ׳ הזה אנחנו מייצרים רק למי שמזמין — בלי מלאי מדף ובלי קיצורי דרך.
+          ככה זה נראה מקרוב:
+        </p>
+      </SectionHead>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {points.map((p, i) => (
+          <div key={p.title} className="panel rounded-2xl p-5 md:p-6" data-reveal={i * 110}>
+            <div className="text-3xl mb-3">{p.icon}</div>
+            <div className="font-display font-black text-xl mb-2">{p.title}</div>
+            <p className="text-sm md:text-[15px] text-chalk/65 leading-relaxed">{p.text}</p>
+          </div>
+        ))}
+      </div>
+      <div className="text-center mt-8">
+        <button onClick={onJumpHoodies} className="btn-ghost rounded-xl px-7 py-3.5 text-sm font-black min-h-[48px]">
+          🧥 הציצו בקפוצ׳ונים
+        </button>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   HOW IT WORKS · three steps, right before the cart
+   ══════════════════════════════════════════════════════════════════ */
+
+function HowItWorks() {
+  var steps = [
+    { n: '01', icon: '🛒', title: 'בוחרים',   text: 'עיצוב, סוג ומידה — או קפוצ׳ון בצבע שלכם. הכל נכנס לעגלה אחת.' },
+    { n: '02', icon: '🔒', title: 'משלמים',   text: paymentLink()
+        ? 'ממלאים שם וטלפון, ועוברים לדף תשלום מאובטח בסלקטור.'
+        : 'ממלאים שם וטלפון, ואנחנו שולחים לכם קישור לתשלום מאובטח בסלקטור.' },
+    { n: '03', icon: '🌴', title: 'אוספים',   text: 'אנחנו מייצרים כל פריט במיוחד בשבילכם, כאן בישראל — והוא מחכה לכם בעמדה באירוע.' },
+  ];
+  return (
+    <section className="max-w-5xl mx-auto px-4 py-14 md:py-20">
+      <SectionHead eyebrow="HOW IT WORKS · איך זה עובד" title="שלושה צעדים לרחבה" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {steps.map((s, i) => (
+          <div key={s.n} className="panel rounded-2xl p-5 relative overflow-hidden" data-reveal={i * 110}>
+            <div className="absolute -top-3 end-3 font-tube text-6xl text-neonPink/25 select-none" aria-hidden="true" dir="ltr">{s.n}</div>
+            <div className="text-3xl mb-3">{s.icon}</div>
+            <div className="font-display font-black text-xl mb-1">{s.title}</div>
+            <p className="text-sm text-chalk/60 leading-relaxed">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   APP
+   ══════════════════════════════════════════════════════════════════ */
+
 function App() {
   const [cart, setCart]         = useState([]);
   const [lightbox, setLightbox] = useState(null);
   const [name, setName]         = useState('');
+  const [phone, setPhone]       = useState('');
   const [loading, setLoading]   = useState(false);
+  const [done, setDone]         = useState(null);
+  const [error, setError]       = useState('');
+  const closed = useClosed();
+  useReveal();
 
-  const totalCount = cart.length;
-  const total      = priceFor(totalCount);
+  // Current order id. A ref, not state: it never affects rendering and must
+  // survive retries without re-rendering.
+  const orderIdRef = useRef('');
 
-  const addToCart      = useCallback((item) => setCart((p) => [...p, item]), []);
-  const removeFromCart = useCallback((uid)  => setCart((p) => p.filter((x) => x.uid !== uid)), []);
+  const t          = cartTotals(cart);
+  const totalCount = t.count;
+  const total      = t.total;
+  const formReady  = !!name.trim() && phoneValid(phone) && !closed;
+  const missing    = configMissing();
 
+  /* Shirt cap is optional (MAX_SHIRTS); hoodies are flat-priced and never capped. */
+  const addToCart = useCallback((item) => setCart(function (p) {
+    if (item.kind === 'shirt' && shirtsFull(countKind(p, 'shirt'))) return p;
+    return p.concat([item]);
+  }), []);
+  const removeFromCart = useCallback((uid) => { setError(''); setCart((p) => p.filter((x) => x.uid !== uid)); }, []);
+
+  /* Strict checkout flow:
+       1. loading state
+       2. POST to the Google Sheet
+       3. wait for the answer and verify ok:true
+       4. only then redirect to the single Selector link
+     Any failure => error message, no redirect. */
   const submitOrder = () => {
-    if (!name.trim() || totalCount === 0 || loading) return;
+    if (!formReady || totalCount === 0 || loading) return;
+
+    var link = paymentLink();
+
+    /* Created once and kept in a ref, so "try again" after a failure sends the
+       same id. The script upserts by it, so a retry updates the same row instead
+       of creating a duplicate order (a timed-out request may still have landed). */
+    if (!orderIdRef.current) {
+      orderIdRef.current = 'SH-' + Date.now().toString(36).toUpperCase();
+    }
+
+    setError('');
     setLoading(true);
+
     var payload = {
-      name:       name.trim(),
-      details:    cart.map((it) => 'דיזיין ' + it.design.label + ' (' + it.design.color + ') · ' + it.type + ' · ' + it.size).join(', '),
-      quantity:   totalCount,
-      totalPrice: total,
+      sheetName:    SHEET_TAB,          // the script writes the row into this tab
+      orderId:      orderIdRef.current,
+      name:         name.trim(),
+      phone:        phone.trim(),
+      /* One line per item, readable as a packing list:
+         "חולצה · עיצוב A (שחור) · מידה M | קפוצ׳ון · לבן · מידה XL" */
+      details:      cart.map(function (it) {
+        return it.kind === 'hoodie'
+          ? 'קפוצ׳ון · ' + it.colorLabel + ' · מידה ' + it.size
+          : it.typeLabel + ' · ' + it.designName + ' (' + it.colorLabel + ') · מידה ' + it.size;
+      }).join(' | '),
+      quantity:     totalCount,
+      shirtCount:   t.shirts,
+      hoodieCount:  t.hoodies,
+      shirtsPrice:  t.shirtsPrice,
+      hoodiesPrice: t.hoodiesPrice,
+      totalPrice:   total,
+      paymentLink:  link,
+      items:        JSON.stringify(cart.map(function (it) {
+        return { kind: it.kind, design: it.designLabel, color: it.colorLabel, type: it.typeLabel, size: it.size };
+      })),
     };
-    var redirect = function() { window.location.href = SELECTOR_URL; };
-    fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    }).then(redirect).catch(redirect);
+
+    // No sheet URL yet — test mode: skip saving and show the confirmation.
+    if (!SHEET_URL) {
+      setTimeout(function () { setLoading(false); setDone(payload); }, 500);
+      return;
+    }
+
+    // mode:'cors' so we can READ the answer and know the save really happened.
+    // text/plain avoids a preflight (OPTIONS) that Apps Script cannot answer;
+    // the body is still JSON and is read from e.postData.contents.
+    var ctrl  = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, REQUEST_TIMEOUT_MS);
+
+    fetch(SHEET_URL, {
+      method:   'POST',
+      mode:     'cors',
+      redirect: 'follow',
+      headers:  { 'Content-Type': 'text/plain;charset=utf-8' },
+      body:     JSON.stringify(payload),
+      signal:   ctrl.signal,
+    })
+      .then(function (res) {
+        clearTimeout(timer);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data || data.ok !== true) throw new Error((data && data.error) || 'invalid response');
+        // Only here is the order definitely saved — go pay.
+        if (link) { window.location.href = link; return; }
+        setLoading(false);
+        setDone(payload);
+      })
+      .catch(function (err) {
+        clearTimeout(timer);
+        setLoading(false);
+        var aborted = err && err.name === 'AbortError';
+        /* After a timeout we do NOT know whether the order landed, so never claim
+           it was not saved. Retrying is safe: same order id, same row. */
+        setError(aborted
+          ? 'לקח לשרת יותר מדי זמן לענות. לא חויבתם. אפשר ללחוץ "נסו שוב" בבטחה — לא תיווצר הזמנה כפולה.'
+          : 'לא הצלחנו לשמור את ההזמנה. לא חויבתם ולא הועברתם לתשלום — נסו שוב בעוד רגע.');
+        console.error('Order submit failed:', err);
+      });
   };
 
-  const goto = (id) => document.getElementById(id) && document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  /* Full reset, including the order id, so a NEW order after closing the
+     confirmation never overwrites the previous order's row. */
+  const closeDone = () => {
+    orderIdRef.current = '';
+    setDone(null); setCart([]); setName(''); setPhone(''); setError('');
+  };
+
+  const goto = (id) => { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+
+  var ctaLabel = closed ? 'ההזמנות נסגרו'
+    : loading ? '⚡ רגע, שומרים לכם מקום...'
+    : !name.trim() ? '✍️ מלאו שם מלא כדי להמשיך'
+    : !phoneValid(phone) ? '📱 מלאו מספר טלפון כדי להמשיך'
+    : error ? '↻ נסו שוב'
+    : paymentLink() ? 'מעבר לתשלום מאובטח בסלקטור 🔒' : 'שריינו לי את ההזמנה 🌴';
 
   return (
-    <div className="min-h-screen text-white pb-28 md:pb-0">
+    <div className="app-shell text-chalk pb-28 md:pb-0">
+
+      {/* DEV STRIP · local preview only, never shown to buyers on the live site */}
+      {IS_LOCAL && missing.length > 0 && (
+        <div className="relative z-50 bg-lemon text-ink text-[12px] font-bold text-center px-4 py-1.5">
+          🧪 מצב בדיקה · חסר: <span dir="ltr" className="font-mono">{missing.join(', ')}</span> —{' '}
+          {!SHEET_URL ? 'הזמנות לא נשמרות ולא עוברות לתשלום.' : 'הזמנות נשמרות בגיליון, אבל אין מעבר לתשלום (מוצג מסך אישור).'}
+        </div>
+      )}
 
       {/* NAV */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-ink/80 border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <NavLogo />
-          <div className="flex items-center gap-2">
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-ink/80 border-b border-neonPink/25"
+              style={{ boxShadow: '0 1px 18px rgba(255,46,136,.15)' }}>
+        <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Shtutnik · לראש העמוד" className="shrink-0">
+            <Logo className="h-10 md:h-11 w-auto" eager />
+          </button>
+          <nav className="flex items-center gap-2">
             <button onClick={() => goto('catalog')}
-              className="hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-bold text-white/70 hover:text-white border border-white/10 hover:border-white/30 transition min-h-[44px]">
-              הדגמים
+              className="hidden sm:inline-flex rounded-lg px-4 py-2 text-sm font-bold text-chalk/70 hover:text-chalk border border-white/10 hover:border-neonCyan/50 transition min-h-[44px] items-center">
+              העיצובים
+            </button>
+            <button onClick={() => goto('hoodies')}
+              className="hidden sm:inline-flex rounded-lg px-4 py-2 text-sm font-bold text-chalk/70 hover:text-chalk border border-white/10 hover:border-neonCyan/50 transition min-h-[44px] items-center">
+              קפוצ׳ונים
             </button>
             <button onClick={() => goto('cart')}
-              className="relative rounded-full px-5 py-2.5 text-sm font-bold bg-gradient-to-r from-ember to-neonPink text-white shadow-glow-ember hover:scale-105 transition min-h-[44px]">
+              className="btn-sunset relative rounded-lg px-5 py-2.5 text-sm font-black min-h-[44px]">
               🛒 עגלה
               {totalCount > 0 && (
-                <span className="absolute -top-2 -end-2 min-w-6 h-6 px-1 rounded-full bg-neonYellow text-ink text-xs font-black flex items-center justify-center">{totalCount}</span>
+                <span className="absolute -top-2 -end-2 min-w-6 h-6 px-1 rounded-full bg-ink border border-neonCyan neon-cyan text-xs font-black flex items-center justify-center">{totalCount}</span>
               )}
             </button>
-          </div>
+          </nav>
         </div>
       </header>
 
       {/* HERO */}
-      <section className="relative desert tribal overflow-hidden">
-        <div className="embers absolute inset-0" />
-        <div className="relative z-10 max-w-5xl mx-auto px-4 pt-12 pb-16 md:pt-20 md:pb-28 text-center">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-ember/50 bg-ember/10 text-ember text-xs font-black tracking-widest">
-            PRE-ORDER · {EVENT_NAME.toUpperCase()} EXCLUSIVE
+      <section className="relative overflow-hidden">
+        <Scenery />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 pt-8 md:pt-10 pb-16 md:pb-24 text-center">
+          <div className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full border border-neonCyan/50 bg-ink/60 backdrop-blur eyebrow neon-cyan">
+            PRE-ORDER · {EDITION}
           </div>
-          <h1 className="text-5xl md:text-7xl font-black leading-[1.05] mb-6">
-            <span className="neon-text">שטותניק</span><br />ברמות הכי גבוהות.
+          <div className="flex justify-center">
+            <div className="hero-logo">
+              <Logo className="w-[300px] md:w-[500px] h-auto" eager />
+            </div>
+          </div>
+          <h1 className="font-display font-black text-4xl md:text-7xl leading-[1.1] mt-6 md:mt-10 mb-4 chrome">
+            מהדורת שנות ה-80 הגיעה.
           </h1>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-8 max-w-2xl mx-auto px-2">
-            {[
-              { icon: '📱', text: 'סורקים את החולצה' },
-              { icon: '🎵', text: 'פלייליסט עם כל האומנים שניגנו לנו' },
-              { icon: '❤️', text: 'שומרים את החוויה קרוב ללב' },
-            ].map((item, i) => (
-              <div key={i} className="flex sm:flex-col items-center gap-3 sm:gap-2 text-start sm:text-center flex-1">
-                {i > 0 && <div className="hidden sm:block text-white/30 text-2xl">↓</div>}
-                <div className="text-3xl shrink-0">{item.icon}</div>
-                <div className="text-white/80 text-sm leading-snug">{item.text}</div>
-              </div>
-            ))}
-          </div>
+          <p className="text-chalk/80 text-base md:text-lg max-w-xl mx-auto mb-2 leading-relaxed font-medium"
+             style={{ textShadow: '0 2px 12px rgba(7,2,15,.9)' }}>
+            שטותניקים, לקראת {EVENT_NAME} הכנו לכם מרצ׳ שבאמת שווה ללבוש: שלושה עיצובים חדשים
+            בחולצה או בגופייה, והפעם — לבקשתכם — גם קפוצ׳ונים לחורף. הכל מיוצר בישראל, רק למי שמזמין.
+          </p>
+          <p className="text-chalk/55 text-xs md:text-sm mb-8" style={{ textShadow: '0 2px 10px rgba(7,2,15,.9)' }}>
+            🇮🇱 מיוצר בישראל · הזמנה מראש בלבד · מסירה ביד באירוע
+          </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button onClick={() => goto('catalog')}
-              className="rounded-full px-8 py-4 text-base md:text-lg font-black bg-gradient-to-r from-ember via-neonPink to-neonPurple text-white shadow-glow-ember hover:scale-105 active:scale-95 transition min-h-[52px]">
-              🛸 לדגמים
+            <button onClick={() => goto('catalog')} className="btn-sunset sheen rounded-xl px-9 py-4 text-base md:text-lg font-black min-h-[52px]">
+              👕 לעיצובים
             </button>
-            <button onClick={() => goto('cart')}
-              className="rounded-full px-8 py-4 text-base md:text-lg font-bold border border-white/25 hover:bg-white/[0.08] transition min-h-[52px]">
-              לעגלה ↓
+            <button onClick={() => goto('hoodies')} className="btn-ghost rounded-xl px-9 py-4 text-base md:text-lg font-black min-h-[52px] bg-ink/50">
+              🧥 לקפוצ׳ונים · {HOODIE_PRICE}₪
             </button>
           </div>
-          <p className="mt-4 text-xs text-white/45">מסירה ידנית באירוע בלבד · כמות מוגבלת · אחרי שזה נגמר — נגמר.</p>
         </div>
       </section>
+
+      <Marquee />
 
       {/* COUNTDOWN */}
-      <section className="bg-gradient-to-b from-ink via-[#200015] to-ink py-10 md:py-14 border-b border-white/[0.07]">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <div className="text-xs font-black tracking-widest text-ember mb-3">⏳ DEADLINE לסגירת הזמנות</div>
+      <section className="py-14 md:py-20">
+        <div className="max-w-2xl mx-auto px-4 text-center" data-reveal>
+          <div className="font-tube text-3xl md:text-5xl neon-pink flicker mb-6" dir="ltr">LAST CALL</div>
           <Countdown />
-          <p className="mt-4 text-white/70 text-sm md:text-base leading-relaxed max-w-lg mx-auto">
-            דדליין לסגירת הזמנות מראש: הטיימר למעלה. לאחר מכן לא יתקבלו הזמנות!
-            הכל מיוצר במיוחד לפי הזמנה, עם השקעה בכל פרט ופרט. נתראה ברחבה! ✌️👽
+          <p className="mt-6 text-chalk/65 text-sm md:text-base leading-relaxed max-w-lg mx-auto">
+            כשהטיימר מגיע לאפס הרשימה נסגרת ויוצאת לייצור בישראל. אנחנו מייצרים בדיוק לפי ההזמנות —
+            אין מלאי עודף ואין סיבוב שני.
           </p>
         </div>
       </section>
 
-      {/* CATALOG */}
-      <section id="catalog" className="max-w-6xl mx-auto px-4 py-12 md:py-20">
-        <div className="text-center mb-8 md:mb-10">
-          <div className="text-xs font-black tracking-widest text-ember mb-2">3 DESIGNS · בחר עיצוב, סוג ומידה</div>
-          <h2 className="text-3xl md:text-5xl font-black neon-text mb-5">הדגמים</h2>
-          <div className="flex flex-wrap justify-center gap-2 mb-4">
-            {[
-              { icon: '🎨', label: '3 דיזיינים' },
-              { icon: '👕', label: 'חולצה או גופייה' },
-              { icon: '🖤', label: "בז' / שחור / לבן" },
-              { icon: '📐', label: 'מידה S–XXL' },
-            ].map((chip, i) => (
-              <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm">
-                <span>{chip.icon}</span>
-                <span className="font-bold text-white/80">{chip.label}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-white/50 text-xs md:text-sm max-w-md mx-auto">
-            הצבע קבוע לכל דיזיין. בחרו חולצה או גופייה, בחרו מידה — ואז הוסיפו לעגלה.
+      <hr className="tube" />
+
+      {/* STORY */}
+      <Story onJumpHoodies={() => goto('hoodies')} />
+
+      <hr className="tube" />
+
+      {/* PRICING */}
+      <Pricing onJump={() => goto('catalog')} onJumpHoodies={() => goto('hoodies')} />
+
+      {/* CATALOG · shirts & tanks */}
+      <section id="catalog" className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <SectionHead eyebrow="THE DROP · 3 DESIGNS" title="העיצובים">
+          <p className="text-chalk/60 text-sm max-w-xl mx-auto mt-4 leading-relaxed">
+            שלושה עיצובים חדשים בסגנון שנות ה-80, לכל אחד צבע משלו. בוחרים חולצה או גופייה ומידה —
+            ואנחנו מייצרים אותה במיוחד בשבילכם, כאן בישראל.
           </p>
-        </div>
+          <Chips items={[
+            { icon: '🇮🇱', label: 'מיוצר בישראל' },
+            { icon: '🎨', label: '3 עיצובים חדשים' },
+            { icon: '👕', label: 'חולצה או גופייה' },
+            { icon: '🖤', label: "שחור · לבן · בז'" },
+            { icon: '📐', label: 'מידות S–XXL' },
+          ]} />
+        </SectionHead>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {DESIGNS.map((d) => <DesignCard key={d.id} design={d} onAdd={addToCart} />)}
+          {DESIGNS.map((d, i) => (
+            <ProductCard key={d.id} design={d} index={i} onAdd={addToCart} onZoom={setLightbox}
+                         cartFull={shirtsFull(t.shirts)} closed={closed} />
+          ))}
         </div>
       </section>
 
-      {/* SPOTIFY STORY */}
-      <section className="bg-gradient-to-b from-ink via-[#1a0010] to-ink py-10 md:py-16">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="inline-block mb-4 px-4 py-2 rounded-2xl border border-ember/30 bg-ember/[0.08] font-mono text-ember text-sm">
-            SHTUTNIK · SPOTIFY · SHITIM
+      {/* HOODIES · separate product family */}
+      <section id="hoodies" className="relative overflow-hidden py-14 md:py-20 border-y border-neonCyan/15"
+               style={{ background: 'radial-gradient(ellipse 900px 500px at 50% 0%, rgba(164,59,255,.18), transparent 70%)' }}>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+          <div className="text-center md:text-start" data-reveal>
+            <div className="eyebrow neon-cyan mb-3">NEW · HOODIES</div>
+            <h2 className="font-display font-black text-4xl md:text-6xl chrome leading-[1.1] pb-1 mb-4">חדש: קפוצ׳ונים</h2>
+            <p className="text-chalk/70 text-base leading-relaxed max-w-md mx-auto md:mx-0 mb-3">
+              החורף מתקרב, והרבה שטותניקים ביקשו מאיתנו קפוצ׳ון. אז הפעם צוות ההפקה החליט להביא שדרוג מיוחד:
+              קפוצ׳ון איכותי ונעים, מיוצר בישראל באותה רמה שאתם כבר מכירים מהחולצות שלנו.
+            </p>
+            <p className="text-chalk/55 text-sm leading-relaxed max-w-md mx-auto md:mx-0 mb-6">
+              כזה שזורקים עליו ביציאה מהרחבה בסוף הלילה — וממשיכים ללבוש כל החורף.
+            </p>
+            <div className="flex items-baseline gap-3 justify-center md:justify-start mb-6">
+              <span className="font-retro text-6xl neon-grad">{HOODIE_PRICE}₪</span>
+              <span className="text-chalk/50 text-sm">ליחידה · בלי הגבלת כמות</span>
+            </div>
+            <ul className="space-y-2 text-sm text-chalk/75 inline-block text-start">
+              <li>🎨 {HOODIES.map((h) => h.color).join(' · ')}</li>
+              <li>🇮🇱 מיוצר בישראל</li>
+              <li>📐 מידות S–XXL</li>
+              <li>➕ מתווסף לכל הזמנה, מחוץ למדרגות החולצות</li>
+            </ul>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black mb-4">
-            הברקוד על החולצה הוא <span className="neon-text">פלייליסט</span>.
-          </h2>
-          <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-            סורקים אותו ונפתח הפלייליסט של האירוע — כל האומנים, כל הסטים. הזיכרון נשמר על הבד. ❤️‍🔥
-          </p>
+          <HoodieCard onAdd={addToCart} onZoom={setLightbox} closed={closed} />
         </div>
       </section>
+
+      <HowItWorks />
+
+      <hr className="tube" />
 
       {/* CART */}
-      <section id="cart" className="max-w-2xl mx-auto px-4 py-12 md:py-20">
-        <div className="text-center mb-6">
-          <div className="text-xs font-black tracking-widest text-ember mb-2">ORDER · העגלה שלך</div>
-          <h2 className="text-3xl md:text-4xl font-black neon-text">בוא נסגור את זה</h2>
-        </div>
+      <section id="cart" className="max-w-2xl mx-auto px-4 py-14 md:py-20">
+        <SectionHead eyebrow="CHECKOUT · העגלה שלכם" title="בואו נסגור את זה" />
 
-        <div className="rounded-3xl border border-white/10 bg-white/[0.025] p-4 md:p-7">
+        <div className="panel rounded-2xl p-4 md:p-7" data-reveal>
           {totalCount === 0 ? (
             <div className="text-center py-10">
-              <div className="text-5xl mb-3">🕳️</div>
-              <p className="text-white/80 mb-1 font-bold text-lg">בינתיים אין לנו פה כלום עדיין!</p>
-              <p className="text-white/45 text-sm mb-6">תחזרו לדגמים, תבחרו מידה — וקדימה לרחבה.</p>
-              <button onClick={() => goto('catalog')}
-                className="rounded-full px-6 py-3.5 font-black text-sm bg-gradient-to-r from-ember to-neonPink text-white shadow-glow-ember hover:scale-105 transition min-h-[48px]">
-                🛸 לדגמים
-              </button>
+              <div className="text-5xl mb-4">📼</div>
+              <p className="text-chalk/85 mb-1 font-black text-lg">העגלה עוד ריקה.</p>
+              <p className="text-chalk/50 text-sm mb-6">קפצו לעיצובים או לקפוצ׳ונים, בחרו צבע ומידה — ויוצאים לדרך.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <button onClick={() => goto('catalog')} className="btn-sunset sheen rounded-xl px-7 py-3.5 font-black text-sm min-h-[48px]">👕 לעיצובים</button>
+                <button onClick={() => goto('hoodies')} className="btn-ghost rounded-xl px-7 py-3.5 font-black text-sm min-h-[48px]">🧥 לקפוצ׳ונים</button>
+              </div>
             </div>
           ) : (
             <div>
-              {/* Cart items */}
+              {/* items */}
               <div className="space-y-2 mb-5">
                 {cart.map((it) => (
-                  <div key={it.uid} className="flex items-center gap-3 p-3 rounded-2xl border border-white/[0.08] bg-white/5">
-                    <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-white/10 bg-ink">
-                      <Img src={it.image} alt="" className="w-full h-full object-cover" />
+                  <div key={it.uid} className="flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.03] animate-fadein">
+                    <div className="stage w-14 h-14 rounded-lg shrink-0 border border-neonPink/30">
+                      <Img src={it.image} alt="" compact className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-black text-sm">דיזיין {it.design.label} · {it.type}</div>
-                      <div className="text-xs text-white/55 mt-0.5">צבע {it.design.color} · מידה {it.size}</div>
+                      <div className="font-black text-sm">
+                        {it.kind === 'hoodie' ? 'קפוצ׳ון ' + it.colorLabel : it.designName + ' · ' + it.typeLabel}
+                      </div>
+                      <div className="text-xs text-chalk/55 mt-1 flex items-center gap-1.5">
+                        <ColorDot hex={it.colorHex} className="w-3 h-3" />
+                        {it.kind === 'hoodie'
+                          ? 'מידה ' + it.size + ' · ' + HOODIE_PRICE + '₪'
+                          : 'צבע ' + it.colorLabel + ' · מידה ' + it.size}
+                      </div>
                     </div>
                     <button onClick={() => removeFromCart(it.uid)} aria-label="הסר פריט"
-                      className="w-11 h-11 rounded-full bg-white/5 hover:bg-white/15 text-white/60 hover:text-white text-lg flex items-center justify-center transition">✕</button>
+                      className="w-11 h-11 rounded-lg bg-white/5 hover:bg-neonPink/20 text-chalk/55 hover:text-chalk text-lg flex items-center justify-center transition shrink-0">✕</button>
                   </div>
                 ))}
               </div>
 
-              {/* Price */}
-              <div className="flex items-center justify-between p-4 rounded-2xl border border-ember/25 bg-ember/5 mb-4">
-                <div>
-                  <div className="text-xs text-white/55">{totalCount} {totalCount === 1 ? 'פריט' : 'פריטים'}</div>
-                  <div className="text-4xl font-black neon-text">{total}<span className="text-2xl">₪</span></div>
+              {/* total — right after the items, the next thing the eye meets */}
+              <div className="p-4 sm:p-5 rounded-2xl border border-neonPink/40 bg-neonPink/[0.06] mb-4 shadow-glow-pink">
+                <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <div className="text-sm sm:text-base font-black text-chalk/75">
+                    סך הכל · {totalCount} {totalCount === 1 ? 'פריט' : 'פריטים'}
+                  </div>
+                  <div className="font-retro text-4xl sm:text-5xl neon-grad leading-none">
+                    {total}<span className="text-2xl sm:text-3xl">₪</span>
+                  </div>
                 </div>
-                <div className="text-end text-xs text-white/50 space-y-0.5">
-                  <div>1 יח׳ = 129₪</div><div>2 יח׳ = 219₪</div><div>3 יח׳ = 309₪</div>
-                  {totalCount > 3 && <div className="text-neonYellow">+100₪ לכל נוסף</div>}
-                </div>
+
+                {/* breakdown exists to explain the shirt tiers — hoodies are flat and
+                    already priced on their own row, so a hoodie-only cart skips it */}
+                {t.shirts > 0 && (
+                  <div className="flex items-start justify-between gap-4 mt-3 pt-3 border-t border-neonPink/25">
+                    <div className="text-xs min-w-0">
+                      <div className="text-chalk/65">חולצות/גופיות · {t.shirts} {t.shirts === 1 ? 'פריט' : 'פריטים'} · {t.shirtsPrice}₪</div>
+                      {t.hoodies > 0 && (
+                        <div className="text-chalk/65 mt-1">קפוצ׳ונים · {t.hoodies} × {HOODIE_PRICE}₪ · {t.hoodiesPrice}₪</div>
+                      )}
+                    </div>
+                    <div className="text-end text-[11px] space-y-0.5 shrink-0 font-retro" dir="ltr">
+                      {[1, 2, 3].map((q) => (
+                        <div key={q} className={t.shirts === q ? 'neon-cyan' : 'text-chalk/45'}>{q} = {SHIRT_TIERS[q]}₪</div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Upsell */}
-              {totalCount === 1 && (
-                <div className="mb-4 p-4 rounded-2xl border border-neonPurple/35 bg-neonPurple/[0.08] text-sm text-white/85 leading-relaxed">
-                  💡 קחו עוד פריט (אולי מתנה לחבר שעף איתכם ברחבה?) והמחיר ליחידה יורד משמעותית!
+              {/* gentle nudges — by shirt count, since only shirts are tiered */}
+              {t.shirts === 1 && (
+                <div className="mb-4 p-4 rounded-xl border border-neonViolet/40 bg-neonViolet/[0.08] text-sm text-chalk/85 leading-relaxed">
+                  💡 חולצה שנייה מורידה משמעותית את המחיר ליחידה. אולי מתנה לחבר שעף איתכם ברחבה?
                 </div>
               )}
-              {totalCount === 2 && (
-                <div className="mb-4 p-4 rounded-2xl border border-ember/35 bg-ember/[0.08] text-sm text-white/85 leading-relaxed">
-                  🔥 פסיעה מהדיל המלא! פריט שלישי יוזיל לכם את המחיר פר יחידה למקסימום.
+              {t.shirts === 2 && (
+                <div className="mb-4 p-4 rounded-xl border border-sunset/40 bg-sunset/[0.07] text-sm text-chalk/85 leading-relaxed">
+                  ⚡ עוד פריט אחד ואתם בדיל המלא — המחיר ליחידה יורד למינימום.
                 </div>
               )}
+              {shirtsFull(t.shirts) && (
+                <div className="mb-4 p-4 rounded-xl border border-neonCyan/40 bg-neonCyan/[0.06] text-sm text-chalk/85 leading-relaxed">
+                  ✓ הגעתם ל-{MAX_SHIRTS} חולצות/גופיות — המקסימום להזמנה, במחיר הכי טוב. רוצים להחליף? הסירו פריט ובחרו אחר.
+                  קפוצ׳ונים אפשר להוסיף בלי הגבלה.
+                </div>
+              )}
+              {t.hoodies === 0 && !closed && (
+                <button onClick={() => goto('hoodies')}
+                  className="w-full mb-4 p-4 rounded-xl border border-neonCyan/35 bg-neonCyan/[0.06] text-sm text-chalk/85 leading-relaxed text-start flex items-center gap-3 hover:bg-neonCyan/[0.11] transition">
+                  <span className="text-xl">🧥</span>
+                  <span className="flex-1">מתחיל להיות קר בסוף הלילה — להוסיף קפוצ׳ון ב-{HOODIE_PRICE}₪?</span>
+                  <span className="neon-cyan font-black whitespace-nowrap">לקפוצ׳ונים ↑</span>
+                </button>
+              )}
 
-              {/* Reassurance */}
-              <div className="mb-5 p-4 rounded-2xl border border-ember/25 bg-ember/[0.06] text-sm text-white/80 leading-relaxed">
-                🔒 מלאו שם, עברו לתשלום מאובטח בסלקטור, ואנחנו נשריין לכם את המידות והדגמים! ההזמנה תחכה לכם בעמדה באירוע עם סריקת הברקוד של סלקטור.
-              </div>
-
-              {/* Name input */}
+              {/* name */}
               <div className="mb-4">
-                <label className="block text-xs font-black text-white/50 mb-2 tracking-wide">שם מלא</label>
-                <input
-                  type="text" value={name} onChange={(e) => setName(e.target.value)}
-                  placeholder="למשל: שגיב כהן"
-                  className="w-full rounded-2xl px-4 py-3.5 bg-white/[0.06] border border-white/15 text-white placeholder-white/30 focus:border-ember/60 focus:outline-none transition min-h-[52px]" />
+                <label htmlFor="fullname" className="block text-xs font-black text-chalk/50 mb-2 tracking-wide">
+                  שם מלא <span className="text-neonPink">*</span>
+                </label>
+                <input id="fullname" type="text" value={name} onChange={(e) => setName(e.target.value)}
+                  required autoComplete="name" placeholder="למשל: שגיב כהן"
+                  className="w-full rounded-xl px-4 py-3.5 bg-white/[0.05] border border-white/15 text-chalk placeholder-chalk/25 focus:border-neonCyan/70 focus:outline-none focus:shadow-glow-cyan transition min-h-[52px]" />
+              </div>
+
+              {/* phone */}
+              <div className="mb-4">
+                <label htmlFor="phone" className="block text-xs font-black text-chalk/50 mb-2 tracking-wide">
+                  מספר טלפון <span className="text-neonPink">*</span>
+                </label>
+                <input id="phone" type="tel" inputMode="tel" dir="ltr"
+                  value={phone} onChange={(e) => setPhone(e.target.value)}
+                  required autoComplete="tel" placeholder="050-1234567"
+                  aria-invalid={phone.length > 0 && !phoneValid(phone)}
+                  className={'w-full rounded-xl px-4 py-3.5 bg-white/[0.05] border text-chalk placeholder-chalk/25 focus:outline-none transition min-h-[52px] text-start ' +
+                    (phone.length > 0 && !phoneValid(phone) ? 'border-neonPink/70' : 'border-white/15 focus:border-neonCyan/70 focus:shadow-glow-cyan')} />
+                {phone.length > 0 && !phoneValid(phone) && (
+                  <p className="text-[11px] text-neonPink mt-1.5">מספר טלפון לא תקין — 9 או 10 ספרות</p>
+                )}
+                <p className="text-[11px] text-chalk/40 mt-1.5">נשתמש בו רק כדי לעדכן אתכם על ההזמנה.</p>
+              </div>
+
+              {/* error — only when saving failed. No redirect in this state. */}
+              {error && (
+                <div role="alert" className="mb-4 p-4 rounded-xl border border-neonPink/60 bg-neonPink/[0.10] text-sm text-chalk/90 leading-relaxed flex gap-3">
+                  <span className="text-lg shrink-0">⚠️</span><span>{error}</span>
+                </div>
+              )}
+
+              {/* what happens on click — right above the button */}
+              <div className="mb-4 p-4 rounded-xl border border-neonCyan/30 bg-neonCyan/[0.05] text-sm text-chalk/80 leading-relaxed flex gap-3">
+                <span className="text-lg shrink-0">🔒</span>
+                <span>{paymentLink()
+                  ? 'קודם אנחנו שומרים את ההזמנה, ורק אז מעבירים אתכם לדף תשלום מאובטח בסלקטור. ההזמנה תחכה לכם בעמדה באירוע.'
+                  : 'אנחנו שומרים את ההזמנה על השם שלכם ושולחים לכם קישור לתשלום מאובטח בסלקטור. ההזמנה תחכה לכם בעמדה באירוע.'}</span>
+              </div>
+
+              {/* clearing fee — covered by the production team this time */}
+              <div className="mb-4 p-4 rounded-xl border border-sunset/45 bg-sunset/[0.08] text-sm text-chalk/85 leading-relaxed flex gap-3"
+                   style={{ boxShadow: '0 0 18px rgba(255,170,31,.12)' }}>
+                <span className="text-lg shrink-0">🎁</span>
+                <span>
+                  <strong className="font-black text-sunset">עמלת הסליקה עלינו! תתחדשו 🔥</strong>
+                  <br />
+                  הפעם צוות ההפקה מכסה את עמלת הסליקה של סלקטור — המחיר שאתם רואים בעגלה הוא בדיוק מה שתשלמו, בלי תוספות.
+                </span>
               </div>
 
               {/* CTA */}
-              <button onClick={submitOrder} disabled={!name.trim() || loading}
-                className={'w-full rounded-full px-6 py-5 text-lg font-black transition min-h-[60px] ' + (!name.trim() || loading ? 'bg-white/[0.08] text-white/35 cursor-not-allowed' : 'bg-gradient-to-r from-ember to-neonPink text-white shadow-glow-ember hover:scale-[1.02] active:scale-95')}>
-                {loading ? '⏳ מעביר לתשלום...' : !name.trim() ? '✍️ מלאו שם מלא כדי לעבור לתשלום' : 'מעבר לתשלום מאובטח בסלקטור 🔒'}
+              <button onClick={submitOrder} disabled={!formReady || loading}
+                className={'w-full rounded-xl px-6 py-5 text-base sm:text-lg font-black transition min-h-[60px] ' +
+                  (!formReady || loading ? 'btn-off' : 'btn-sunset sheen')}>
+                {ctaLabel}
               </button>
 
-              <p className="text-center text-xs text-white/40 mt-3 leading-relaxed">
-                אנחנו שומרים אצלנו רק את השם המלא, הדגמים והמידות שהזמנתם — כדי לשריין אותם עבורכם באירוע. 👽
+              <p className="text-center text-xs text-chalk/40 mt-3 leading-relaxed">
+                אנחנו שומרים רק את השם, הטלפון, העיצובים והמידות שהזמנתם — כדי לשריין אותם עבורכם. 👽
+              </p>
+
+              {/* TODO · confirm the cancellation policy for this event */}
+              <p className="text-center text-[11px] text-chalk/35 mt-4 pt-4 border-t border-white/[0.07] leading-relaxed max-w-md mx-auto">
+                הפריטים מיוצרים בהזמנה אישית. ניתן לבטל עד למועד סגירת ההזמנות באתר (בניכוי 5% דמי ביטול).
+                לאחר סגירת ההזמנות הפריטים עוברים לייצור ולא יתאפשרו ביטולים.
               </p>
             </div>
           )}
@@ -627,30 +1737,32 @@ function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-10 text-center text-white/50 text-sm space-y-1.5">
-          <div className="text-2xl">✌️ 👽 💜</div>
-          <div className="font-black neon-text text-base">Shtutnik</div>
-          <div>נתראה ב{EVENT_NAME}.</div>
-          <div className="text-xs text-white/30 pt-3">© {new Date().getFullYear()} Shtutnik · כל הזכויות והאהבה שמורות.</div>
+      <footer className="relative border-t border-neonPink/20">
+        <div className="max-w-6xl mx-auto px-4 py-12 text-center text-chalk/50 text-sm space-y-3">
+          <div className="flex justify-center"><Logo className="w-44 h-auto opacity-90" /></div>
+          <div className="font-tube text-xl neon-cyan" dir="ltr">SEE YOU ON THE FLOOR</div>
+          <div>נתראה על הרחבה ב{EVENT_NAME}. ✌️👽</div>
+          <div className="text-xs text-chalk/40">🇮🇱 מיוצר בישראל, באהבה ובהשקעה.</div>
+          <div className="text-xs text-chalk/30 pt-2">© {new Date().getFullYear()} Shtutnik · כל הזכויות והאהבה שמורות.</div>
         </div>
       </footer>
 
       {/* MOBILE STICKY CART BAR */}
       {totalCount > 0 && (
-        <div className="md:hidden fixed bottom-0 inset-x-0 z-30 bg-ink/95 backdrop-blur border-t border-white/10 px-4 pt-3 mobile-cart-bar">
+        <div className="md:hidden fixed bottom-0 inset-x-0 z-30 bg-ink/95 backdrop-blur border-t border-neonPink/30 px-4 pt-3 mobile-cart-bar">
           <button onClick={() => goto('cart')}
-            className="w-full flex items-center justify-between gap-3 rounded-full px-5 py-3.5 bg-gradient-to-r from-ember to-neonPink text-white shadow-glow-ember font-black min-h-[52px]">
+            className="btn-sunset w-full flex items-center justify-between gap-3 rounded-xl px-5 py-3.5 font-black min-h-[52px]">
             <span className="flex items-center gap-2">
-              <span className="bg-ink/40 rounded-full w-7 h-7 flex items-center justify-center text-sm">{totalCount}</span>
+              <span className="bg-ink/25 rounded-full w-7 h-7 flex items-center justify-center text-sm">{totalCount}</span>
               לעגלה
             </span>
-            <span>{total}₪ ←</span>
+            <span className="font-retro">{total}₪ ←</span>
           </button>
         </div>
       )}
 
       <Lightbox src={lightbox ? lightbox.src : null} alt={lightbox ? lightbox.alt : ''} onClose={() => setLightbox(null)} />
+      <SuccessModal order={done} onClose={closeDone} />
     </div>
   );
 }
@@ -673,8 +1785,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
     } catch (e) {
       document.getElementById('root').innerHTML =
         '<div style="padding:40px;text-align:center;color:#fff;font-family:Heebo,sans-serif">' +
-        '<div style="font-size:40px">😵‍💫</div><p>שגיאה בטעינת האתר. רעננו את הדף.</p>' +
-        '<pre style="color:#FF6B35;font-size:11px;white-space:pre-wrap">' + (e && e.message) + '</pre></div>';
+        '<div style="font-size:40px">📼</div><p>שגיאה בטעינת האתר. רעננו את הדף.</p>' +
+        '<pre style="color:#FF2E88;font-size:11px;white-space:pre-wrap">' + (e && e.message) + '</pre></div>';
       console.error('App boot failed:', e);
     }
   }
